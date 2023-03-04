@@ -1,0 +1,55 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '14.0'
+use_frameworks!
+
+workspace 'MyMovie'
+project 'MyMovie/MyMovie..project'
+project 'Home/Home.project'
+project 'Common/Common.project'
+
+def shared_pods
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'Kingfisher'
+
+  pod 'Moya/RxSwift'
+
+  pod 'Swinject'
+
+  pod 'Toast-Swift'
+end
+
+
+# MyMovie
+target 'MyMovie' do
+
+  project "MyMovie/MyMovie.project"
+  shared_pods
+  
+  target 'MyMovieTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'MyMovieUITests' do
+    # Pods for testing
+  end
+
+end
+
+# Home
+target 'Home' do
+  
+  project "Home/Home.project"
+  shared_pods
+
+end
+
+
+# Common
+target "Common" do
+
+  project "Common/Common.project"
+  shared_pods
+
+end
