@@ -6,11 +6,16 @@ workspace 'MyMovie'
 project 'MyMovie/MyMovie..project'
 project 'Home/Home.project'
 project 'Common/Common.project'
+project 'UIComponent/UIComponent.project'
 
 def shared_pods
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'Kingfisher'
+
+  pod 'SnapKit'
+  pod 'FlexLayout'
+  pod 'PinLayout'
 
   pod 'Moya/RxSwift'
 
@@ -53,3 +58,15 @@ target "Common" do
   shared_pods
 
 end
+
+
+# UIComponent
+target "UIComponent" do
+
+  project "UIComponent/UIComponent.project"
+  shared_pods
+
+end
+
+
+

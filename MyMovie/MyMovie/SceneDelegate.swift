@@ -6,17 +6,49 @@
 //
 
 import UIKit
+import Home
+import Common
+import Swinject
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
-
+    
+    let homeDIContainer = HomeDIContainer()
+    let container: Container = {
+        let container = Container()
+        // MARK: HOME
+        container.register(HomeViewController.self) { r in
+            HomeViewController(viewModel: r.resolve(HomeViewModel.self)!)
+        }
+        
+        container.register(HomeViewModel.self) { r in
+            HomeViewModel(movieUseCase: r.resolve(MovieUseCase.self)!)
+        }
+        
+        container.register(MovieUseCase.self) { _ in
+            MovieUseCase()
+        }
+        return container
+    }()
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(windowScene: windowScene)
+        
+        let tabbarController = UITabBarController()
+        let homeViewController = container.resolve(HomeViewController.self)!
+        homeViewController.tabBarItem.badgeColor = .systemBlue
+        homeViewController.tabBarItem.image = UIImage(systemName: "house")
+        homeViewController.title = "홈"
+        
+        tabbarController.viewControllers = [homeViewController]
+        
+        window?.rootViewController = tabbarController
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
