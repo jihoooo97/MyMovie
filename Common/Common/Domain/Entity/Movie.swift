@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class Movie: Decodable {
+public class Movie: Codable {
     var movieCd: String?
     var movieNm: String?
     var movieNmEn: String?
@@ -23,23 +23,23 @@ public class Movie: Decodable {
     var staffs: [Staff]?
 }
 
-public class Genre: Decodable {
+public class Genre: Codable {
     var genreNm: String?
 }
 
-public class showType: Decodable {
+public class showType: Codable {
     var showTypeGroupNm: String?
     var showTypeNm: String?
 }
 
-public class Company: Decodable {
+public class Company: Codable {
     var companyCd: String?
     var companyNm: String?
     var companyNmEn: String?
     var companyPartNm: String?
 }
 
-public class Audit: Decodable {
+public class Audit: Codable {
     var autditNo: String?
     var watchGradeNm: String?
 }

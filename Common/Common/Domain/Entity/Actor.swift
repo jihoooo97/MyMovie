@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class People: Decodable {
+public class People: Codable {
     var peopleNm: String?
     var peopleNmEn: String?
 }

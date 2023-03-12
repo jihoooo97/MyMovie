@@ -17,53 +17,23 @@ public protocol MovieUseCaseProtocol {
 
 open class MovieUseCase: MovieUseCaseProtocol {
     
-    fileprivate var provider = MoyaProvider<MovieAPI>()
+    fileprivate var provider: Network<MovieAPI>
     
     public init() {
-        let netwokrLoggerPlugin = NetworkLoggerPlugin(configuration: .init(formatter: .init(entry: { (identifier, message, targetType) -> String in
-            if identifier != "Response" {
-                return "[\(identifier)] \(message)"
-            }
-            return "Response"
-        }, requestData: { data in
-            return data.prettyPrintedJSONString as String? ?? ""
-        }, responseData: { data in
-            return data.prettyPrintedJSONString as String? ?? ""
-        }), output: { target, items in
-            print("------------------------------------------------------------")
-            items.forEach { if $0 != "Response" { print($0) } }
-            print("------------------------------------------------------------")
-        }, logOptions: [.verbose]))
-    
-        let networkActivityPlugin = NetworkActivityPlugin { change, target in
-            switch change {
-            case .began:
-                break
-            case .ended:
-                break
-            }
-        }
-        
-        let configuration = URLSessionConfiguration.default
-        let session = Session(configuration: configuration)
-        
-        provider = MoyaProvider(session: session, plugins: [netwokrLoggerPlugin])
+        self.provider = Network<MovieAPI>(plugins: [LoggingPlugin()])
     }
     
     
     public func getDailyBoxOffice(targetDt: String) -> Single<DailyBoxOfficeResult> {
-        return provider.rx.request(.dailyBoxOffice(targetDt: targetDt))
-            .map(DailyBoxOfficeResult.self)
+        return provider.requestObject(.dailyBoxOffice(targetDt: targetDt), type: DailyBoxOfficeResult.self)
     }
     
     public func getWeeklyBoxOffice(targetDt: String) -> Single<WeeklyBoxOfficeResult> {
-        return provider.rx.request(.weeklyBoxOffice(targetDt: targetDt))
-            .map(WeeklyBoxOfficeResult.self)
+        return provider.requestObject(.weeklyBoxOffice(targetDt: targetDt), type: WeeklyBoxOfficeResult.self)
     }
 
     public func getMovieInfo(movieCd: String) -> Single<Movie> {
-        return provider.rx.request(.movieInfo(movieCd: movieCd))
-            .map(Movie.self)
+        return provider.requestObject(.movieInfo(movieCd: movieCd), type: Movie.self)
     }
     
 }

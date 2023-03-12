@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		134BEA7529BDA5D8003B6D27 /* LoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134BEA7429BDA5D8003B6D27 /* LoggingPlugin.swift */; };
+		1353254329BCEFFD00D540F8 /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1353254229BCEFFD00D540F8 /* UIViewController+extension.swift */; };
 		13D993E629B3830500B8E497 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13D993DD29B3830400B8E497 /* Common.framework */; };
 		13D993EB29B3830500B8E497 /* CommonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D993EA29B3830500B8E497 /* CommonTests.swift */; };
 		13D993EC29B3830500B8E497 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = 13D993E029B3830400B8E497 /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -18,7 +20,7 @@
 		13D9943629B3E8CF00B8E497 /* MovieAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9943529B3E8CF00B8E497 /* MovieAPI.swift */; };
 		13D9943F29B4D3C800B8E497 /* ActorUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9943E29B4D3C800B8E497 /* ActorUseCase.swift */; };
 		13D9944829B4F48100B8E497 /* Encodable+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9944729B4F48100B8E497 /* Encodable+extension.swift */; };
-		13D9944C29B4FEA700B8E497 /* Networkable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9944B29B4FEA700B8E497 /* Networkable.swift */; };
+		13D9944C29B4FEA700B8E497 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9944B29B4FEA700B8E497 /* Network.swift */; };
 		13D9947E29B5D48A00B8E497 /* DateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9947D29B5D48A00B8E497 /* DateParser.swift */; };
 		13D9948529B5F5EB00B8E497 /* Data+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9948429B5F5EB00B8E497 /* Data+extension.swift */; };
 		9D3C140E83724979612740D8 /* Pods_Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31A6461EFC04FB3A7245574D /* Pods_Common.framework */; };
@@ -36,6 +38,8 @@
 
 /* Begin PBXFileReference section */
 		033D245B51C5D2B1261F6E23 /* Pods-Common.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common.debug.xcconfig"; path = "Target Support Files/Pods-Common/Pods-Common.debug.xcconfig"; sourceTree = "<group>"; };
+		134BEA7429BDA5D8003B6D27 /* LoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingPlugin.swift; sourceTree = "<group>"; };
+		1353254229BCEFFD00D540F8 /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
 		13D993DD29B3830400B8E497 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13D993E029B3830400B8E497 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		13D993E529B3830500B8E497 /* CommonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,7 +52,7 @@
 		13D9943529B3E8CF00B8E497 /* MovieAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAPI.swift; sourceTree = "<group>"; };
 		13D9943E29B4D3C800B8E497 /* ActorUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorUseCase.swift; sourceTree = "<group>"; };
 		13D9944729B4F48100B8E497 /* Encodable+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+extension.swift"; sourceTree = "<group>"; };
-		13D9944B29B4FEA700B8E497 /* Networkable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networkable.swift; sourceTree = "<group>"; };
+		13D9944B29B4FEA700B8E497 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		13D9947D29B5D48A00B8E497 /* DateParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateParser.swift; sourceTree = "<group>"; };
 		13D9948429B5F5EB00B8E497 /* Data+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+extension.swift"; sourceTree = "<group>"; };
 		31A6461EFC04FB3A7245574D /* Pods_Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,9 +159,10 @@
 		13D9942B29B3AC9C00B8E497 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				13D9944B29B4FEA700B8E497 /* Network.swift */,
 				13D9942429B3992D00B8E497 /* MyKeys.swift */,
 				13D9943529B3E8CF00B8E497 /* MovieAPI.swift */,
-				13D9944B29B4FEA700B8E497 /* Networkable.swift */,
+				134BEA7429BDA5D8003B6D27 /* LoggingPlugin.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 			children = (
 				13D9944729B4F48100B8E497 /* Encodable+extension.swift */,
 				13D9948429B5F5EB00B8E497 /* Data+extension.swift */,
+				1353254229BCEFFD00D540F8 /* UIViewController+extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -343,11 +349,13 @@
 				13D9943029B3ADFF00B8E497 /* Actor.swift in Sources */,
 				13D9942E29B3ADF500B8E497 /* Movie.swift in Sources */,
 				13D9942529B3992D00B8E497 /* MyKeys.swift in Sources */,
+				134BEA7529BDA5D8003B6D27 /* LoggingPlugin.swift in Sources */,
 				13D9943629B3E8CF00B8E497 /* MovieAPI.swift in Sources */,
 				13D9943429B3E79E00B8E497 /* MovieUseCase.swift in Sources */,
 				13D9943229B3DF6500B8E497 /* BoxOffice.swift in Sources */,
-				13D9944C29B4FEA700B8E497 /* Networkable.swift in Sources */,
+				13D9944C29B4FEA700B8E497 /* Network.swift in Sources */,
 				13D9944829B4F48100B8E497 /* Encodable+extension.swift in Sources */,
+				1353254329BCEFFD00D540F8 /* UIViewController+extension.swift in Sources */,
 				13D9948529B5F5EB00B8E497 /* Data+extension.swift in Sources */,
 				13D9947E29B5D48A00B8E497 /* DateParser.swift in Sources */,
 				13D9943F29B4D3C800B8E497 /* ActorUseCase.swift in Sources */,

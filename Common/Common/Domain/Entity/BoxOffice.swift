@@ -7,22 +7,22 @@
 
 import Foundation
 
-open class DailyBoxOfficeResult: Decodable {
+open class DailyBoxOfficeResult: Codable {
     public var boxOfficeResult: DailyBoxOffice?
 }
 
-open class DailyBoxOffice: Decodable {
+open class DailyBoxOffice: Codable {
     public var boxofficeType: String?
     public var showRange: String?
     public var dailyBoxOfficeList: [BoxOffice]?
 }
 
 
-open class WeeklyBoxOfficeResult: Decodable {
+open class WeeklyBoxOfficeResult: Codable {
     public var boxOfficeResult: WeeklyBoxOffice?
 }
 
-open class WeeklyBoxOffice: Decodable {
+open class WeeklyBoxOffice: Codable {
     public var boxofficeType: String?
     public var showRange: String?
     public var yearWeekTime: String?
@@ -30,7 +30,7 @@ open class WeeklyBoxOffice: Decodable {
 }
 
 
-open class BoxOffice: Decodable {
+open class BoxOffice: Codable {
     public var rnum: String?
     public var rank: String?
     public var rankInten: String?

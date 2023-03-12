@@ -49,32 +49,32 @@ extension MovieAPI: TargetType {
     public var task: Moya.Task {
         switch self {
         case .dailyBoxOffice(let targetDt):
-            return .requestParameters(parameters: ["key" : MyKeys.movie,
-                                                   "targetDt" : targetDt,
-                                                   "repNationCd" : "K"],
+            return .requestParameters(parameters: ["key": MyKeys.movie,
+                                                   "targetDt": targetDt,
+                                                   "repNationCd": "K"],
                                       encoding: URLEncoding.queryString)
         case .weeklyBoxOffice(let targetDt):
-            return .requestParameters(parameters: ["key" : MyKeys.movie,
-                                                   "targetDt" : targetDt,
-                                                   "repNationCd" : "K",
-                                                   "weekGb" : "0"],
+            return .requestParameters(parameters: ["key": MyKeys.movie,
+                                                   "targetDt": targetDt,
+                                                   "repNationCd": "K",
+                                                   "weekGb": "0"],
                                       encoding: URLEncoding.queryString)
         case .movieInfo(let movieCd):
             return .requestParameters(parameters: ["key": MyKeys.movie,
-                                                   "movieCd" : movieCd],
+                                                   "movieCd": movieCd],
                                       encoding: URLEncoding.queryString)
         case .actorList(let peopleNm):
-            return .requestParameters(parameters: ["key" : MyKeys.movie,
-                                                   "peopleNm" : peopleNm],
+            return .requestParameters(parameters: ["key": MyKeys.movie,
+                                                   "peopleNm": peopleNm],
                                       encoding: URLEncoding.queryString)
         case .actorInfo(let peopleCd):
-            return .requestParameters(parameters: ["key" : MyKeys.movie,
-                                                   "peopleCd" : peopleCd],
+            return .requestParameters(parameters: ["key": MyKeys.movie,
+                                                   "peopleCd": peopleCd],
                                       encoding: URLEncoding.queryString)
         }
     }
     
-    public var headers: [String : String]? {
+    public var headers: [String: String]? {
         return .none
     }
     
