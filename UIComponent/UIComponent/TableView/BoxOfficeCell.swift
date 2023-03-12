@@ -35,7 +35,7 @@ open class BoxOfficeCell: BaseTableViewCell {
         
         indicatorView.snp.makeConstraints {
             $0.leading.trailing.bottom.equalTo(contentView)
-            $0.height.equalTo(1)
+            $0.height.equalTo(0.5)
         }
     }
     

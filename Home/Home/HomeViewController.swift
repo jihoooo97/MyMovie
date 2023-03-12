@@ -32,13 +32,12 @@ open class HomeViewController: UIViewController {
     
     var headerView = UIView()
     var dayRangeLabel = UILabel()
-    var boxOfficeTypeLabel = UILabel()
     var dailyBoxOfficeButton = UIButton()
     var weeklyBoxOfficeButton = UIButton()
     var indicatorView = UIView()
     var boxOfficeTableView = BoxOfficeTableView()
     
-    fileprivate let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +48,6 @@ open class HomeViewController: UIViewController {
     }
     
     private func bind() {
-        viewModel.getDailyMovieList(targetDt: DateParser.getOneDayBeforeDate())
-        
         viewModel.dayRangeRelay
             .bind(to: dayRangeLabel.rx.text)
             .disposed(by: disposeBag)
@@ -62,7 +59,7 @@ open class HomeViewController: UIViewController {
                 cell.bind(boxOffice: item)
             }.disposed(by: disposeBag)
         
-        viewModel.boxOfficeType
+        viewModel.boxOfficeTypeRelay
             .bind(onNext: { [weak self] type in
                 self?.dailyBoxOfficeButton.isSelected = type.first! == "일"
                 self?.weeklyBoxOfficeButton.isSelected = type.first! == "주"
@@ -71,22 +68,26 @@ open class HomeViewController: UIViewController {
         dailyBoxOfficeButton.rx.tap
             .throttle(.seconds(1), latest: false, scheduler: MainScheduler.instance)
             .bind(onNext: { [weak self] in
-                self?.viewModel.getDailyMovieList(targetDt: DateParser.getOneDayBeforeDate())
+                self?.viewModel.updateDailyBoxOffice()
             }).disposed(by: disposeBag)
 
         weeklyBoxOfficeButton.rx.tap
             .throttle(.seconds(1), latest: false, scheduler: MainScheduler.instance)
             .bind(onNext: { [weak self] in
-                self?.viewModel.getWeeklyMovieList(targetDt: DateParser.getOneWeekBeforeDate())
+                self?.viewModel.updateWeeklyBoxOffice()
             }).disposed(by: disposeBag)
         
         boxOfficeTableView.rx.itemSelected
             .throttle(.seconds(1), latest: false, scheduler: MainScheduler.instance)
-            .map{ [weak self] in
+            .map { [weak self] in
                 (self?.viewModel.boxOfficeRelay.value[$0.row])!
             }
-            .bind(onNext: { item in
-                print(item.movieNm ?? "none")
+            .bind(onNext: { [weak self] item in
+                // 각 모듈마다 Container
+                let viewModel = MovieDetailViewModel(useCase: MovieUseCase())
+                viewModel.getMovieInfo(movieCode: item.movieCd)
+                let movieDetailView = MovieDetailViewController(viewModel: viewModel)
+                self?.navigationController?.pushViewController(movieDetailView, animated: true)
             }).disposed(by: disposeBag)
     }
     
@@ -95,30 +96,40 @@ open class HomeViewController: UIViewController {
         
         headerView.backgroundColor = .white
         
-        boxOfficeTypeLabel.text = "박스오피스"
-        boxOfficeTypeLabel.textColor = .systemBlue
-        
         dayRangeLabel.textColor = .lightGray
         
-        dailyBoxOfficeButton.setTitle("일별", for: .normal)
-        dailyBoxOfficeButton.setTitleColor(.black, for: .normal)
-        dailyBoxOfficeButton.setTitleColor(.systemBlue, for: .selected)
+        dailyBoxOfficeButton = {
+            let button = UIButton()
+            button.setTitle("일별", for: .normal)
+            button.setTitleColor(.black, for: .normal)
+            button.setTitleColor(.systemBlue, for: .selected)
+            return button
+        }()
+
+        weeklyBoxOfficeButton = {
+            let button = UIButton()
+            button.setTitle("주간", for: .normal)
+            button.setTitleColor(.black, for: .normal)
+            button.setTitleColor(.systemBlue, for: .selected)
+            return button
+        }()
         
-        weeklyBoxOfficeButton.setTitle("주간", for: .normal)
-        weeklyBoxOfficeButton.setTitleColor(.black, for: .normal)
-        weeklyBoxOfficeButton.setTitleColor(.systemBlue, for: .selected)
+        indicatorView.backgroundColor = .lightGray
         
         boxOfficeTableView.delegate = self
+        
+        navigationItem.title = "박스오피스"
+        navigationItem.backButtonTitle = ""
     }
     
     private func initLayout() {
-        let safeArea = view.layoutMarginsGuide
+        let safeArea = view.safeAreaLayoutGuide
         
         [headerView, boxOfficeTableView].forEach {
             view.addSubview($0)
         }
         
-        [boxOfficeTypeLabel, dayRangeLabel, dailyBoxOfficeButton, weeklyBoxOfficeButton].forEach {
+        [dayRangeLabel, dailyBoxOfficeButton, weeklyBoxOfficeButton, indicatorView].forEach {
             headerView.addSubview($0)
         }
         
@@ -127,13 +138,8 @@ open class HomeViewController: UIViewController {
             $0.bottom.equalTo(dailyBoxOfficeButton.snp.bottom)
         }
         
-        boxOfficeTypeLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(8)
-            $0.centerX.equalToSuperview()
-        }
-        
         dayRangeLabel.snp.makeConstraints {
-            $0.top.equalTo(boxOfficeTypeLabel.snp.bottom).offset(8)
+            $0.top.equalToSuperview().offset(8)
             $0.centerX.equalToSuperview()
         }
         
@@ -149,6 +155,11 @@ open class HomeViewController: UIViewController {
             $0.top.equalTo(dailyBoxOfficeButton)
             $0.width.equalTo(dailyBoxOfficeButton)
             $0.height.equalTo(40)
+        }
+        
+        indicatorView.snp.makeConstraints {
+            $0.leading.trailing.bottom.equalToSuperview()
+            $0.height.equalTo(1)
         }
         
         boxOfficeTableView.snp.makeConstraints {

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		07EEEAA2FD9BCA43F8B812DE /* Pods_MyMovie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B68F7303FE82190D9A87A8D7 /* Pods_MyMovie.framework */; };
+		134BEA7B29BDE9E4003B6D27 /* UIComponent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 134BEA7A29BDE9E4003B6D27 /* UIComponent.framework */; };
+		134BEA7C29BDE9E4003B6D27 /* UIComponent.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 134BEA7A29BDE9E4003B6D27 /* UIComponent.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		13D993A429B382EA00B8E497 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D993A329B382EA00B8E497 /* AppDelegate.swift */; };
 		13D993A629B382EA00B8E497 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D993A529B382EA00B8E497 /* SceneDelegate.swift */; };
 		13D993AD29B382EB00B8E497 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13D993AC29B382EB00B8E497 /* Assets.xcassets */; };
@@ -19,7 +21,7 @@
 		13D9941A29B38AE600B8E497 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 13D9941729B38AE600B8E497 /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		13D9941B29B38AE600B8E497 /* Home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13D9941829B38AE600B8E497 /* Home.framework */; };
 		13D9941C29B38AE600B8E497 /* Home.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 13D9941829B38AE600B8E497 /* Home.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		13D9942129B38E0C00B8E497 /* HomeDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9942029B38E0C00B8E497 /* HomeDIContainer.swift */; };
+		13D9942129B38E0C00B8E497 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9942029B38E0C00B8E497 /* AppDIContainer.swift */; };
 		495E8219F51BC75F51D20561 /* Pods_MyMovieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FDB45E8759AE2BFD110528D /* Pods_MyMovieTests.framework */; };
 		7AE9D65CF6C283A304C60BC6 /* Pods_MyMovie_MyMovieUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D887DAFA987423BCB88DD0CA /* Pods_MyMovie_MyMovieUITests.framework */; };
 /* End PBXBuildFile section */
@@ -49,6 +51,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				13D9941A29B38AE600B8E497 /* Common.framework in Embed Frameworks */,
+				134BEA7C29BDE9E4003B6D27 /* UIComponent.framework in Embed Frameworks */,
 				13D9941C29B38AE600B8E497 /* Home.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -57,6 +60,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		134BEA7A29BDE9E4003B6D27 /* UIComponent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13D993A029B382EA00B8E497 /* MyMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13D993A329B382EA00B8E497 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13D993A529B382EA00B8E497 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,7 +74,7 @@
 		13D993C629B382EB00B8E497 /* MyMovieUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMovieUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		13D9941729B38AE600B8E497 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13D9941829B38AE600B8E497 /* Home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		13D9942029B38E0C00B8E497 /* HomeDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDIContainer.swift; sourceTree = "<group>"; };
+		13D9942029B38E0C00B8E497 /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
 		3DADEF712E8B836A8ECF0ABF /* Pods-MyMovie-MyMovieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMovie-MyMovieUITests.release.xcconfig"; path = "Target Support Files/Pods-MyMovie-MyMovieUITests/Pods-MyMovie-MyMovieUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4FDB45E8759AE2BFD110528D /* Pods_MyMovieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyMovieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B68F9754D21706958379C2C /* Pods-MyMovie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMovie.debug.xcconfig"; path = "Target Support Files/Pods-MyMovie/Pods-MyMovie.debug.xcconfig"; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 			files = (
 				07EEEAA2FD9BCA43F8B812DE /* Pods_MyMovie.framework in Frameworks */,
 				13D9941929B38AE600B8E497 /* Common.framework in Frameworks */,
+				134BEA7B29BDE9E4003B6D27 /* UIComponent.framework in Frameworks */,
 				13D9941B29B38AE600B8E497 /* Home.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,7 +147,7 @@
 				13D993AC29B382EB00B8E497 /* Assets.xcassets */,
 				13D993AE29B382EB00B8E497 /* LaunchScreen.storyboard */,
 				13D993B129B382EB00B8E497 /* Info.plist */,
-				13D9942029B38E0C00B8E497 /* HomeDIContainer.swift */,
+				13D9942029B38E0C00B8E497 /* AppDIContainer.swift */,
 			);
 			path = MyMovie;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 		7ADE9B6FB0682EF63E5C606D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				134BEA7A29BDE9E4003B6D27 /* UIComponent.framework */,
 				13D9941729B38AE600B8E497 /* Common.framework */,
 				13D9941829B38AE600B8E497 /* Home.framework */,
 				B68F7303FE82190D9A87A8D7 /* Pods_MyMovie.framework */,
@@ -431,7 +437,7 @@
 			files = (
 				13D993A429B382EA00B8E497 /* AppDelegate.swift in Sources */,
 				13D993A629B382EA00B8E497 /* SceneDelegate.swift in Sources */,
-				13D9942129B38E0C00B8E497 /* HomeDIContainer.swift in Sources */,
+				13D9942129B38E0C00B8E497 /* AppDIContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

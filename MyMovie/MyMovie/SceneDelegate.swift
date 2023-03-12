@@ -8,29 +8,14 @@
 import UIKit
 import Home
 import Common
+import UIComponent
 import Swinject
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     
-    let homeDIContainer = HomeDIContainer()
-    let container: Container = {
-        let container = Container()
-        // MARK: HOME
-        container.register(HomeViewController.self) { r in
-            HomeViewController(viewModel: r.resolve(HomeViewModel.self)!)
-        }
-        
-        container.register(HomeViewModel.self) { r in
-            HomeViewModel(movieUseCase: r.resolve(MovieUseCase.self)!)
-        }
-        
-        container.register(MovieUseCase.self) { _ in
-            MovieUseCase()
-        }
-        return container
-    }()
+    let homeDIContainer = AppDIContainer.container
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -40,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         
         let tabbarController = UITabBarController()
-        let homeViewController = container.resolve(HomeViewController.self)!
+        let homeViewController = NavigationController(rootViewController: homeDIContainer.resolve(HomeViewController.self)!)
         homeViewController.tabBarItem.badgeColor = .systemBlue
         homeViewController.tabBarItem.image = UIImage(systemName: "house")
         homeViewController.title = "홈"

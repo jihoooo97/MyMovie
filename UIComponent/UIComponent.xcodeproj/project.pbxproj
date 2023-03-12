@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1318ED9F29BA3C16009A674D /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1318ED9E29BA3C16009A674D /* BaseTableViewCell.swift */; };
+		134BEA7929BDE332003B6D27 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134BEA7829BDE332003B6D27 /* NavigationController.swift */; };
+		1353253F29BCE34200D540F8 /* BackButtonHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1353253E29BCE34200D540F8 /* BackButtonHeaderView.swift */; };
 		13D9946029B5C04600B8E497 /* UIComponent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13D9945729B5C04600B8E497 /* UIComponent.framework */; };
 		13D9946529B5C04600B8E497 /* UIComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9946429B5C04600B8E497 /* UIComponentTests.swift */; };
 		13D9946629B5C04600B8E497 /* UIComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 13D9945A29B5C04600B8E497 /* UIComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -44,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		1318ED9E29BA3C16009A674D /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		134BEA7829BDE332003B6D27 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		1353253E29BCE34200D540F8 /* BackButtonHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonHeaderView.swift; sourceTree = "<group>"; };
 		13D9945729B5C04600B8E497 /* UIComponent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIComponent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13D9945A29B5C04600B8E497 /* UIComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIComponent.h; sourceTree = "<group>"; };
 		13D9945F29B5C04600B8E497 /* UIComponentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIComponentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,10 +81,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1353253D29BCE31C00D540F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1353253E29BCE34200D540F8 /* BackButtonHeaderView.swift */,
+				134BEA7829BDE332003B6D27 /* NavigationController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		13D9944D29B5C04600B8E497 = {
 			isa = PBXGroup;
 			children = (
-				13D9946F29B5C07000B8E497 /* TableView */,
 				13D9945929B5C04600B8E497 /* UIComponent */,
 				13D9946329B5C04600B8E497 /* UIComponentTests */,
 				13D9945829B5C04600B8E497 /* Products */,
@@ -101,6 +113,8 @@
 		13D9945929B5C04600B8E497 /* UIComponent */ = {
 			isa = PBXGroup;
 			children = (
+				1353253D29BCE31C00D540F8 /* View */,
+				13D9946F29B5C07000B8E497 /* TableView */,
 				13D9945A29B5C04600B8E497 /* UIComponent.h */,
 			);
 			path = UIComponent;
@@ -282,7 +296,9 @@
 			files = (
 				13D9947529B5C3E400B8E497 /* BoxOfficeTableView.swift in Sources */,
 				1318ED9F29BA3C16009A674D /* BaseTableViewCell.swift in Sources */,
+				134BEA7929BDE332003B6D27 /* NavigationController.swift in Sources */,
 				13D9947729B5C40700B8E497 /* BoxOfficeCell.swift in Sources */,
+				1353253F29BCE34200D540F8 /* BackButtonHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		134BEA7529BDA5D8003B6D27 /* LoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134BEA7429BDA5D8003B6D27 /* LoggingPlugin.swift */; };
+		134BEA7E29BDEFFB003B6D27 /* BoxOfficeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134BEA7D29BDEFFB003B6D27 /* BoxOfficeList.swift */; };
 		1353254329BCEFFD00D540F8 /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1353254229BCEFFD00D540F8 /* UIViewController+extension.swift */; };
 		13D993E629B3830500B8E497 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13D993DD29B3830400B8E497 /* Common.framework */; };
 		13D993EB29B3830500B8E497 /* CommonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D993EA29B3830500B8E497 /* CommonTests.swift */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		033D245B51C5D2B1261F6E23 /* Pods-Common.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common.debug.xcconfig"; path = "Target Support Files/Pods-Common/Pods-Common.debug.xcconfig"; sourceTree = "<group>"; };
 		134BEA7429BDA5D8003B6D27 /* LoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingPlugin.swift; sourceTree = "<group>"; };
+		134BEA7D29BDEFFB003B6D27 /* BoxOfficeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeList.swift; sourceTree = "<group>"; };
 		1353254229BCEFFD00D540F8 /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
 		13D993DD29B3830400B8E497 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13D993E029B3830400B8E497 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				13D9943129B3DF6500B8E497 /* BoxOffice.swift */,
 				13D9942D29B3ADF500B8E497 /* Movie.swift */,
 				13D9942F29B3ADFF00B8E497 /* Actor.swift */,
+				134BEA7D29BDEFFB003B6D27 /* BoxOfficeList.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -159,8 +162,8 @@
 		13D9942B29B3AC9C00B8E497 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				13D9944B29B4FEA700B8E497 /* Network.swift */,
 				13D9942429B3992D00B8E497 /* MyKeys.swift */,
+				13D9944B29B4FEA700B8E497 /* Network.swift */,
 				13D9943529B3E8CF00B8E497 /* MovieAPI.swift */,
 				134BEA7429BDA5D8003B6D27 /* LoggingPlugin.swift */,
 			);
@@ -349,6 +352,7 @@
 				13D9943029B3ADFF00B8E497 /* Actor.swift in Sources */,
 				13D9942E29B3ADF500B8E497 /* Movie.swift in Sources */,
 				13D9942529B3992D00B8E497 /* MyKeys.swift in Sources */,
+				134BEA7E29BDEFFB003B6D27 /* BoxOfficeList.swift in Sources */,
 				134BEA7529BDA5D8003B6D27 /* LoggingPlugin.swift in Sources */,
 				13D9943629B3E8CF00B8E497 /* MovieAPI.swift in Sources */,
 				13D9943429B3E79E00B8E497 /* MovieUseCase.swift in Sources */,

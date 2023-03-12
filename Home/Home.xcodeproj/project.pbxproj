@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		134BEA7129BDA128003B6D27 /* HomeDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134BEA7029BDA128003B6D27 /* HomeDIContainer.swift */; };
+		1353253C29BCDFA700D540F8 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1353253B29BCDFA700D540F8 /* MovieDetailViewController.swift */; };
+		1353254129BCE6EC00D540F8 /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1353254029BCE6EC00D540F8 /* MovieDetailViewModel.swift */; };
 		13D9940829B3877C00B8E497 /* Home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13D993FF29B3877B00B8E497 /* Home.framework */; };
 		13D9940D29B3877C00B8E497 /* HomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9940C29B3877C00B8E497 /* HomeTests.swift */; };
 		13D9940E29B3877C00B8E497 /* Home.h in Headers */ = {isa = PBXBuildFile; fileRef = 13D9940229B3877B00B8E497 /* Home.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -45,6 +48,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		134BEA7029BDA128003B6D27 /* HomeDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDIContainer.swift; sourceTree = "<group>"; };
+		1353253B29BCDFA700D540F8 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		1353254029BCE6EC00D540F8 /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
 		13D993FF29B3877B00B8E497 /* Home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13D9940229B3877B00B8E497 /* Home.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Home.h; sourceTree = "<group>"; };
 		13D9940729B3877C00B8E497 /* HomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +112,9 @@
 				13D9940229B3877B00B8E497 /* Home.h */,
 				13D9941E29B38B4A00B8E497 /* HomeViewController.swift */,
 				13D9942229B3903900B8E497 /* HomeViewModel.swift */,
+				1353253B29BCDFA700D540F8 /* MovieDetailViewController.swift */,
+				1353254029BCE6EC00D540F8 /* MovieDetailViewModel.swift */,
+				134BEA7029BDA128003B6D27 /* HomeDIContainer.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -275,7 +284,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				134BEA7129BDA128003B6D27 /* HomeDIContainer.swift in Sources */,
+				1353254129BCE6EC00D540F8 /* MovieDetailViewModel.swift in Sources */,
 				13D9941F29B38B4A00B8E497 /* HomeViewController.swift in Sources */,
+				1353253C29BCDFA700D540F8 /* MovieDetailViewController.swift in Sources */,
 				13D9942329B3903900B8E497 /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

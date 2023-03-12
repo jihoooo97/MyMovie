@@ -50,13 +50,11 @@ extension MovieAPI: TargetType {
         switch self {
         case .dailyBoxOffice(let targetDt):
             return .requestParameters(parameters: ["key": MyKeys.movie,
-                                                   "targetDt": targetDt,
-                                                   "repNationCd": "K"],
+                                                   "targetDt": targetDt],
                                       encoding: URLEncoding.queryString)
         case .weeklyBoxOffice(let targetDt):
             return .requestParameters(parameters: ["key": MyKeys.movie,
                                                    "targetDt": targetDt,
-                                                   "repNationCd": "K",
                                                    "weekGb": "0"],
                                       encoding: URLEncoding.queryString)
         case .movieInfo(let movieCd):

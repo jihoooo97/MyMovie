@@ -7,39 +7,51 @@
 
 import Foundation
 
-public class Movie: Codable {
-    var movieCd: String?
-    var movieNm: String?
-    var movieNmEn: String?
-    var prdtYear: String?
-    var showTm: String?
-    var openDt: String?
-    var genres: [Genre]?
-    var directors: [Director]?
-    var actors: [Actor]?
-    var showTypes: [showType]?
-    var companys: [Company]?
-    var audits: [Audit]?
-    var staffs: [Staff]?
+public struct MovieInfoResult: Codable {
+    public var movieInfoResult: MovieInfo
 }
 
-public class Genre: Codable {
-    var genreNm: String?
+public struct MovieInfo: Codable {
+    public var movieInfo: Movie
+    public var source: String
 }
 
-public class showType: Codable {
-    var showTypeGroupNm: String?
-    var showTypeNm: String?
+public struct Movie: Codable {
+    public var movieCd: String
+    public var movieNm: String
+    public var movieNmEn: String
+    public var movieNmOg: String
+    public var showTm: String
+    public var prdtYear: String
+    public var openDt: String
+    public var prdtStatNm: String
+    public var typeNm: String
+    public var genres: [Genre]
+    public var directors: [Director]
+    public var actors: [Actor]
+    public var showTypes: [showType]
+    public var companys: [Company]
+    public var audits: [Audit]
+    public var staffs: [Staff]
 }
 
-public class Company: Codable {
-    var companyCd: String?
-    var companyNm: String?
-    var companyNmEn: String?
-    var companyPartNm: String?
+public struct Genre: Codable {
+    public var genreNm: String
 }
 
-public class Audit: Codable {
-    var autditNo: String?
-    var watchGradeNm: String?
+public struct showType: Codable {
+    public  var showTypeGroupNm: String
+    public var showTypeNm: String
+}
+
+public struct Company: Codable {
+    public var companyCd: String
+    public var companyNm: String
+    public var companyNmEn: String
+    public var companyPartNm: String
+}
+
+public struct Audit: Codable {
+    public var auditNo: String
+    public var watchGradeNm: String
 }
