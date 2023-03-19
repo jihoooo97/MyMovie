@@ -30,7 +30,7 @@ public struct Movie: Codable {
     public var directors: [Director]
     public var actors: [Actor]
     public var showTypes: [showType]
-    public var companys: [Company]
+    public var nations: [Nation]
     public var audits: [Audit]
     public var staffs: [Staff]
 }
@@ -40,15 +40,12 @@ public struct Genre: Codable {
 }
 
 public struct showType: Codable {
-    public  var showTypeGroupNm: String
+    public var showTypeGroupNm: String
     public var showTypeNm: String
 }
 
-public struct Company: Codable {
-    public var companyCd: String
-    public var companyNm: String
-    public var companyNmEn: String
-    public var companyPartNm: String
+public struct Nation: Codable {
+    public var nationNm: String
 }
 
 public struct Audit: Codable {

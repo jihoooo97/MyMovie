@@ -145,7 +145,7 @@ open class HomeViewController: UIViewController {
         
         dailyBoxOfficeButton.snp.makeConstraints {
             $0.leading.equalToSuperview()
-            $0.top.equalTo(dayRangeLabel.snp.bottom).offset(10)
+            $0.top.equalTo(dayRangeLabel.snp.bottom).offset(4)
             $0.width.equalToSuperview().dividedBy(2)
             $0.height.equalTo(40)
         }

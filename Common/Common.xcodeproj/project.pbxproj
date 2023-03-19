@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13275D3B29C73B340052F5A0 /* MyFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13275D3A29C73B340052F5A0 /* MyFont.swift */; };
 		134BEA7529BDA5D8003B6D27 /* LoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134BEA7429BDA5D8003B6D27 /* LoggingPlugin.swift */; };
 		134BEA7E29BDEFFB003B6D27 /* BoxOfficeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134BEA7D29BDEFFB003B6D27 /* BoxOfficeList.swift */; };
 		1353254329BCEFFD00D540F8 /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1353254229BCEFFD00D540F8 /* UIViewController+extension.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		033D245B51C5D2B1261F6E23 /* Pods-Common.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common.debug.xcconfig"; path = "Target Support Files/Pods-Common/Pods-Common.debug.xcconfig"; sourceTree = "<group>"; };
+		13275D3A29C73B340052F5A0 /* MyFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFont.swift; sourceTree = "<group>"; };
 		134BEA7429BDA5D8003B6D27 /* LoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingPlugin.swift; sourceTree = "<group>"; };
 		134BEA7D29BDEFFB003B6D27 /* BoxOfficeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeList.swift; sourceTree = "<group>"; };
 		1353254229BCEFFD00D540F8 /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				13D9947D29B5D48A00B8E497 /* DateParser.swift */,
+				13275D3A29C73B340052F5A0 /* MyFont.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				13D9943229B3DF6500B8E497 /* BoxOffice.swift in Sources */,
 				13D9944C29B4FEA700B8E497 /* Network.swift in Sources */,
 				13D9944829B4F48100B8E497 /* Encodable+extension.swift in Sources */,
+				13275D3B29C73B340052F5A0 /* MyFont.swift in Sources */,
 				1353254329BCEFFD00D540F8 /* UIViewController+extension.swift in Sources */,
 				13D9948529B5F5EB00B8E497 /* Data+extension.swift in Sources */,
 				13D9947E29B5D48A00B8E497 /* DateParser.swift in Sources */,
