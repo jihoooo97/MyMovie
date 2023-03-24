@@ -14,7 +14,6 @@ import RxCocoa
 open class HomeViewController: UIViewController {
 
     // MARK: DI
-    
     private let viewModel: HomeViewModelProtocol
     
     public init(viewModel: HomeViewModelProtocol) {
@@ -27,8 +26,13 @@ open class HomeViewController: UIViewController {
     }
     
     
-    // MARK: View
+    // MARK: Constraint
+    private struct Constraint {
+        static let boxOfficeButtonHeight = 40.0
+        static let indicatorHeight = 0.5
+    }
     
+    // MARK: View
     var titleStackView = UIStackView()
     var titleLabel = UILabel()
     var dayRangeLabel = UILabel()
@@ -37,7 +41,7 @@ open class HomeViewController: UIViewController {
     var dailyBoxOfficeButton = UIButton()
     var weeklyBoxOfficeButton = UIButton()
     var indicatorView = UIView()
-    var boxOfficeTableView = BoxOfficeTableView()
+    var boxOfficeTableView = OneLabelTableView()
     
     private let disposeBag = DisposeBag()
     
@@ -56,8 +60,8 @@ open class HomeViewController: UIViewController {
         
         viewModel.boxOfficeRelay
             .bind(to: boxOfficeTableView.rx.items(
-                cellIdentifier: BoxOfficeCell.cellID,
-                cellType: BoxOfficeCell.self
+                cellIdentifier: OneLabelCell.cellID,
+                cellType: OneLabelCell.self
             )) { (index, item, cell) in
                 cell.bind(boxOffice: item)
             }.disposed(by: disposeBag)
@@ -95,6 +99,7 @@ open class HomeViewController: UIViewController {
     
     private func initAttribute() {
         view.backgroundColor = .white
+        navigationItem.backButtonTitle = ""
         
         titleStackView = {
             let stackView = UIStackView()
@@ -142,11 +147,9 @@ open class HomeViewController: UIViewController {
             return button
         }()
         
-        indicatorView.backgroundColor = .systemGray3
+        indicatorView.backgroundColor = .systemGray
         
         boxOfficeTableView.delegate = self
-        
-        navigationItem.backButtonTitle = ""
     }
     
     private func initConstraint() {
@@ -173,21 +176,21 @@ open class HomeViewController: UIViewController {
         
         dailyBoxOfficeButton.snp.makeConstraints {
             $0.leading.equalToSuperview()
-            $0.top.equalTo(headerView).offset(4)
+            $0.top.equalTo(headerView)
             $0.width.equalToSuperview().dividedBy(2)
-            $0.height.equalTo(40)
+            $0.height.equalTo(Constraint.boxOfficeButtonHeight)
         }
         
         weeklyBoxOfficeButton.snp.makeConstraints {
             $0.trailing.equalToSuperview()
             $0.top.equalTo(dailyBoxOfficeButton)
             $0.width.equalTo(dailyBoxOfficeButton)
-            $0.height.equalTo(40)
+            $0.height.equalTo(Constraint.boxOfficeButtonHeight)
         }
         
         indicatorView.snp.makeConstraints {
             $0.leading.trailing.bottom.equalToSuperview()
-            $0.height.equalTo(1)
+            $0.height.equalTo(Constraint.indicatorHeight)
         }
         
         boxOfficeTableView.snp.makeConstraints {

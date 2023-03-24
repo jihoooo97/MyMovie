@@ -56,7 +56,7 @@ open class MovieDetailViewController: UIViewController {
     private var actorCollectionView = BadgeListCollectionView()
     
     private var directorTitleLabel = UILabel()
-    private var directorCollectionView = BadgeListCollectionView()
+    private var directorLabel = BorderLabel()
     
     private var companyTitleLabel = UILabel()
     private var companyLabel = UILabel()
@@ -81,19 +81,12 @@ open class MovieDetailViewController: UIViewController {
                 self?.showTimeLabel.text = movie.showTm + "분"
                 self?.openDateLabel.text = movie.openDt
                 self?.watchGradeLabel.text = movie.audits.first?.watchGradeNm ?? "-"
+                self?.directorLabel.text = movie.directors.first?.peopleNm ?? "-"
                 self?.companyLabel.text = movie.companys.first?.companyNm ?? "-"
             }).disposed(by: disposeBag)
         
         viewModel.actorListRelay
             .bind(to: actorCollectionView.rx.items(
-                cellIdentifier: BadgeListCell.cellID,
-                cellType: BadgeListCell.self
-            )) { index, data, cell in
-                cell.bind(name: data.peopleNm)
-            }.disposed(by: disposeBag)
-        
-        viewModel.directorListRelay
-            .bind(to: directorCollectionView.rx.items(
                 cellIdentifier: BadgeListCell.cellID,
                 cellType: BadgeListCell.self
             )) { index, data, cell in
@@ -128,9 +121,26 @@ open class MovieDetailViewController: UIViewController {
             return label
         }()
         
-        genreLabel.font = MyFont.Body1
-        nationLabel.font = MyFont.Body1
-        showTimeLabel.font = MyFont.Body1
+        genreLabel = {
+            let label = UILabel()
+            label.textColor = .black
+            label.font = MyFont.Body1
+            return label
+        }()
+        
+        nationLabel = {
+            let label = UILabel()
+            label.textColor = .black
+            label.font = MyFont.Body1
+            return label
+        }()
+        
+        showTimeLabel = {
+            let label = UILabel()
+            label.textColor = .black
+            label.font = MyFont.Body1
+            return label
+        }()
         
         openDateTitleLabel = {
             let label = UILabel()
@@ -140,7 +150,12 @@ open class MovieDetailViewController: UIViewController {
             return label
         }()
         
-        openDateLabel.font = MyFont.Body1
+        openDateLabel = {
+            let label = UILabel()
+            label.textColor = .black
+            label.font = MyFont.Body1
+            return label
+        }()
         
         watchGradeTitltLabel = {
             let label = UILabel()
@@ -150,7 +165,12 @@ open class MovieDetailViewController: UIViewController {
             return label
         }()
         
-        watchGradeLabel.font = MyFont.Body1
+        watchGradeLabel = {
+            let label = UILabel()
+            label.textColor = .black
+            label.font = MyFont.Body1
+            return label
+        }()
         
         actorTitleLabel = {
             let label = UILabel()
@@ -176,10 +196,14 @@ open class MovieDetailViewController: UIViewController {
             return label
         }()
         
-        companyLabel.font = MyFont.Body1
+        companyLabel = {
+            let label = UILabel()
+            label.textColor = .black
+            label.font = MyFont.Body1
+            return label
+        }()
         
         actorCollectionView.delegate = self
-        directorCollectionView.delegate = self
     }
     
     private func initConstraint() {
@@ -189,10 +213,9 @@ open class MovieDetailViewController: UIViewController {
             view.addSubview($0)
         }
         
-        [titleLabel, infoTitleLabel, openDateTitleLabel, watchGradeTitltLabel,
-         genreLabel, nationLabel, showTimeLabel, openDateLabel, watchGradeLabel,
-         actorTitleLabel, actorCollectionView,
-         directorTitleLabel, directorCollectionView,
+        [titleLabel, infoTitleLabel, genreLabel, nationLabel, showTimeLabel,
+         openDateTitleLabel, openDateLabel, watchGradeTitltLabel, watchGradeLabel,
+         actorTitleLabel, actorCollectionView, directorTitleLabel, directorLabel,
          companyTitleLabel, companyLabel].forEach {
             infoView.addSubview($0)
         }
@@ -265,15 +288,14 @@ open class MovieDetailViewController: UIViewController {
             $0.top.equalTo(actorCollectionView.snp.bottom).offset(Constraint.titleLabelTop)
         }
         
-        directorCollectionView.snp.makeConstraints {
-            $0.leading.trailing.equalTo(actorCollectionView)
+        directorLabel.snp.makeConstraints {
+            $0.leading.equalTo(actorCollectionView)
             $0.top.equalTo(directorTitleLabel.snp.bottom).offset(Constraint.collectionViewTop)
-            $0.height.equalTo(Constraint.collectionViewHeight)
         }
         
         companyTitleLabel.snp.makeConstraints {
             $0.leading.equalTo(actorTitleLabel)
-            $0.top.equalTo(directorCollectionView.snp.bottom).offset(Constraint.titleLabelTop)
+            $0.top.equalTo(directorLabel.snp.bottom).offset(Constraint.titleLabelTop)
         }
         
         companyLabel.snp.makeConstraints {
@@ -293,8 +315,6 @@ extension MovieDetailViewController: UICollectionViewDelegateFlowLayout {
         
         if collectionView == actorCollectionView {
             name = viewModel.actorListRelay.value[indexPath.row].peopleNm
-        } else {
-            name = viewModel.directorListRelay.value[indexPath.row].peopleNm
         }
         
         let word = name.filter { $0 != " " }
