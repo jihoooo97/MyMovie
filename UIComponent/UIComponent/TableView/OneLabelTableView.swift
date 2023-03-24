@@ -7,7 +7,7 @@
 
 import UIKit
 
-open class BoxOfficeTableView: UITableView {
+open class OneLabelTableView: UITableView {
     
     public override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
@@ -16,8 +16,8 @@ open class BoxOfficeTableView: UITableView {
         separatorStyle = .none
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
-        register(BoxOfficeCell.self, forCellReuseIdentifier: BoxOfficeCell.cellID)
-        rowHeight = 50
+        register(OneLabelCell.self, forCellReuseIdentifier: OneLabelCell.cellID)
+        rowHeight = 56
     }
     
     public required init?(coder: NSCoder) {

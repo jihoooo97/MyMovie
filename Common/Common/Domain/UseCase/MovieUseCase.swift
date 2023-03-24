@@ -12,15 +12,16 @@ import Moya
 public protocol MovieUseCaseProtocol {
     func getDailyBoxOffice(targetDt: String) -> Single<DailyBoxOfficeResult>
     func getWeeklyBoxOffice(targetDt: String) -> Single<WeeklyBoxOfficeResult>
+    func searchMovieList(movieNm: String?, actorNm:String?) -> Single<SearchMovieListResult>
     func getMovieInfo(movieCd: String) -> Single<MovieInfoResult>
 }
 
 open class MovieUseCase: MovieUseCaseProtocol {
     
-    fileprivate var provider: Network<MovieAPI>
+    fileprivate var provider: BaseProvider<MovieAPI>
     
     public init() {
-        self.provider = Network<MovieAPI>(plugins: [LoggingPlugin()])
+        self.provider = BaseProvider<MovieAPI>(plugins: [LoggingPlugin()])
     }
     
     
@@ -32,6 +33,9 @@ open class MovieUseCase: MovieUseCaseProtocol {
         return provider.requestObject(.weeklyBoxOffice(targetDt: targetDt), type: WeeklyBoxOfficeResult.self)
     }
 
+    public func searchMovieList(movieNm: String?, actorNm: String?) -> Single<SearchMovieListResult> {
+        <#code#>
+    }
     public func getMovieInfo(movieCd: String) -> Single<MovieInfoResult> {
         return provider.requestObject(.movieInfo(movieCd: movieCd), type: MovieInfoResult.self)
     }

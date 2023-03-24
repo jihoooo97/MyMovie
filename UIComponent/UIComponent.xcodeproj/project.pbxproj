@@ -14,8 +14,8 @@
 		13D9946029B5C04600B8E497 /* UIComponent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13D9945729B5C04600B8E497 /* UIComponent.framework */; };
 		13D9946529B5C04600B8E497 /* UIComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9946429B5C04600B8E497 /* UIComponentTests.swift */; };
 		13D9946629B5C04600B8E497 /* UIComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 13D9945A29B5C04600B8E497 /* UIComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		13D9947529B5C3E400B8E497 /* BoxOfficeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9947429B5C3E400B8E497 /* BoxOfficeTableView.swift */; };
-		13D9947729B5C40700B8E497 /* BoxOfficeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9947629B5C40700B8E497 /* BoxOfficeCell.swift */; };
+		13D9947529B5C3E400B8E497 /* OneLabelTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9947429B5C3E400B8E497 /* OneLabelTableView.swift */; };
+		13D9947729B5C40700B8E497 /* OneLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9947629B5C40700B8E497 /* OneLabelCell.swift */; };
 		13D9948129B5DB2600B8E497 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13D9948029B5DB2600B8E497 /* Common.framework */; };
 		13D9948229B5DB2600B8E497 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 13D9948029B5DB2600B8E497 /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		13D9C23029CC7DD100984556 /* BadgeListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9C22F29CC7DD100984556 /* BadgeListCollectionView.swift */; };
@@ -57,8 +57,8 @@
 		13D9945A29B5C04600B8E497 /* UIComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIComponent.h; sourceTree = "<group>"; };
 		13D9945F29B5C04600B8E497 /* UIComponentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIComponentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		13D9946429B5C04600B8E497 /* UIComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIComponentTests.swift; sourceTree = "<group>"; };
-		13D9947429B5C3E400B8E497 /* BoxOfficeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeTableView.swift; sourceTree = "<group>"; };
-		13D9947629B5C40700B8E497 /* BoxOfficeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeCell.swift; sourceTree = "<group>"; };
+		13D9947429B5C3E400B8E497 /* OneLabelTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLabelTableView.swift; sourceTree = "<group>"; };
+		13D9947629B5C40700B8E497 /* OneLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLabelCell.swift; sourceTree = "<group>"; };
 		13D9948029B5DB2600B8E497 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13D9C22F29CC7DD100984556 /* BadgeListCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeListCollectionView.swift; sourceTree = "<group>"; };
 		13D9C23129CC809900984556 /* BadgeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeListCell.swift; sourceTree = "<group>"; };
@@ -143,8 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				1318ED9E29BA3C16009A674D /* BaseTableViewCell.swift */,
-				13D9947429B5C3E400B8E497 /* BoxOfficeTableView.swift */,
-				13D9947629B5C40700B8E497 /* BoxOfficeCell.swift */,
+				13D9947429B5C3E400B8E497 /* OneLabelTableView.swift */,
+				13D9947629B5C40700B8E497 /* OneLabelCell.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -314,10 +314,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13D9947529B5C3E400B8E497 /* BoxOfficeTableView.swift in Sources */,
+				13D9947529B5C3E400B8E497 /* OneLabelTableView.swift in Sources */,
 				1318ED9F29BA3C16009A674D /* BaseTableViewCell.swift in Sources */,
 				134BEA7929BDE332003B6D27 /* NavigationController.swift in Sources */,
-				13D9947729B5C40700B8E497 /* BoxOfficeCell.swift in Sources */,
+				13D9947729B5C40700B8E497 /* OneLabelCell.swift in Sources */,
 				13D9C23029CC7DD100984556 /* BadgeListCollectionView.swift in Sources */,
 				13D9C23229CC809900984556 /* BadgeListCell.swift in Sources */,
 				13275D3929C6B1750052F5A0 /* BorderLabel.swift in Sources */,

@@ -11,6 +11,7 @@ import Moya
 public enum MovieAPI {
     case dailyBoxOffice(targetDt: String)
     case weeklyBoxOffice(targetDt: String)
+    case searchMoviList(movieNm: String?, directorNm: String?, actorNm: String?)
     case movieInfo(movieCd: String)
     case actorList(peopleNm: String)
     case actorInfo(peopleCd: String)
@@ -29,6 +30,8 @@ extension MovieAPI: TargetType {
             return "/boxoffice/searchDailyBoxOfficeList.json"
         case .weeklyBoxOffice:
             return "/boxoffice/searchWeeklyBoxOfficeList.json"
+        case .searchMoviList:
+            return "/movie/searchMovieList.json"
         case .movieInfo:
             return "/movie/searchMovieInfo.json"
         case .actorList:
@@ -40,7 +43,7 @@ extension MovieAPI: TargetType {
     
     public var method: Moya.Method {
         switch self {
-        case .dailyBoxOffice, .weeklyBoxOffice,
+        case .dailyBoxOffice, .weeklyBoxOffice, .searchMoviList,
                 .movieInfo, .actorList, .actorInfo:
             return .get
         }
@@ -48,24 +51,30 @@ extension MovieAPI: TargetType {
     
     public var task: Moya.Task {
         switch self {
-        case .dailyBoxOffice(let targetDt):
+        case let .dailyBoxOffice(targetDt):
             return .requestParameters(parameters: ["key": MyKeys.movie,
                                                    "targetDt": targetDt],
                                       encoding: URLEncoding.queryString)
-        case .weeklyBoxOffice(let targetDt):
+        case let .weeklyBoxOffice(targetDt):
             return .requestParameters(parameters: ["key": MyKeys.movie,
                                                    "targetDt": targetDt,
                                                    "weekGb": "0"],
                                       encoding: URLEncoding.queryString)
-        case .movieInfo(let movieCd):
+        case let .searchMoviList(movieNm, directorNm, actorNm):
+            return .requestParameters(parameters: ["key": MyKeys.movie,
+                                                   "movieNm": movieNm ?? "",
+                                                   "directorNm": directorNm ?? "",
+                                                   "actorNm": actorNm ?? ""],
+                                      encoding: URLEncoding.queryString)
+        case let .movieInfo(movieCd):
             return .requestParameters(parameters: ["key": MyKeys.movie,
                                                    "movieCd": movieCd],
                                       encoding: URLEncoding.queryString)
-        case .actorList(let peopleNm):
+        case let .actorList(peopleNm):
             return .requestParameters(parameters: ["key": MyKeys.movie,
                                                    "peopleNm": peopleNm],
                                       encoding: URLEncoding.queryString)
-        case .actorInfo(let peopleCd):
+        case let .actorInfo(peopleCd):
             return .requestParameters(parameters: ["key": MyKeys.movie,
                                                    "peopleCd": peopleCd],
                                       encoding: URLEncoding.queryString)

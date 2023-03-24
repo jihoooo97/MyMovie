@@ -8,7 +8,7 @@
 import Moya
 import RxSwift
 
-class Network<API: TargetType>: MoyaProvider<API> {
+class BaseProvider<API: TargetType>: MoyaProvider<API> {
     
     init(plugins: [PluginType] = []) {
         let session = MoyaProvider<API>.defaultAlamofireSession()
@@ -25,7 +25,7 @@ class Network<API: TargetType>: MoyaProvider<API> {
 }
 
 
-extension Network {
+extension BaseProvider {
     
     func requestWithoutMapping(_ api: API) -> Single<Void> {
         return request(api)

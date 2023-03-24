@@ -9,9 +9,9 @@ import UIKit
 import Common
 import SnapKit
 
-open class BoxOfficeCell: BaseTableViewCell {
+open class OneLabelCell: BaseTableViewCell {
 
-    public static let cellID = "BoxOfficeCell"
+    public static let cellID = "OneLabelCell"
     
     private struct Constraint {
         static let leftRight = 8.0
