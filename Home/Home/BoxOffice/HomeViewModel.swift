@@ -5,10 +5,9 @@
 //  Created by 유지호 on 2023/03/04.
 //
 
-import Foundation
+import Common
 import RxSwift
 import RxRelay
-import Common
 
 public protocol HomeViewModelProtocol {
     var boxOfficeTypeRelay: BehaviorRelay<String> { get }

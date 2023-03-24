@@ -13,6 +13,11 @@ open class BoxOfficeCell: BaseTableViewCell {
 
     public static let cellID = "BoxOfficeCell"
     
+    private struct Constraint {
+        static let leftRight = 8.0
+        static let indicatorHeight = 0.5
+    }
+    
     fileprivate let movieNameLabel = UILabel()
     fileprivate let indicatorView = UIView()
 
@@ -34,8 +39,10 @@ open class BoxOfficeCell: BaseTableViewCell {
         }
         
         indicatorView.snp.makeConstraints {
-            $0.leading.trailing.bottom.equalTo(contentView)
-            $0.height.equalTo(0.5)
+            $0.leading.equalToSuperview().offset(Constraint.leftRight)
+            $0.trailing.equalToSuperview().offset(-Constraint.leftRight)
+            $0.bottom.equalToSuperview()
+            $0.height.equalTo(Constraint.indicatorHeight)
         }
     }
     
@@ -49,7 +56,7 @@ open class BoxOfficeCell: BaseTableViewCell {
         
         movieNameLabel.textColor = .black
         
-        indicatorView.backgroundColor = .lightGray
+        indicatorView.backgroundColor = .systemGray5
     }
     
 }

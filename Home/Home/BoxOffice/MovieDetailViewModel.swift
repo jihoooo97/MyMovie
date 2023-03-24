@@ -12,18 +12,20 @@ import RxRelay
 
 public protocol MovieDetailViewModelProtocol {
     var movieInfoRelay: PublishRelay<Movie> { get }
-    var movieTitleRelay: BehaviorRelay<String> { get }
+    var actorListRelay: BehaviorRelay<[Actor]> { get }
+    var directorListRelay: BehaviorRelay<[Director]> { get }
     
     func getMovieInfo(movieCode: String)
 }
 
 open class MovieDetailViewModel: MovieDetailViewModelProtocol {
-    
+
     private let useCase: MovieUseCaseProtocol
     private let disposeBag = DisposeBag()
     
     public let movieInfoRelay = PublishRelay<Movie>()
-    public let movieTitleRelay = BehaviorRelay<String>(value: "----")
+    public let actorListRelay = BehaviorRelay<[Actor]>(value: [])
+    public let directorListRelay = BehaviorRelay<[Director]>(value: [])
     
     public init(useCase: MovieUseCaseProtocol) {
         self.useCase = useCase
@@ -35,7 +37,8 @@ open class MovieDetailViewModel: MovieDetailViewModelProtocol {
             .subscribe(onSuccess: { [weak self] result in
                 let movieInfo = result.movieInfoResult.movieInfo
                 self?.movieInfoRelay.accept(movieInfo)
-                self?.movieTitleRelay.accept(movieInfo.movieNm)
+                self?.actorListRelay.accept(movieInfo.actors)
+                self?.directorListRelay.accept(movieInfo.directors)
             }).disposed(by: disposeBag)
     }
 

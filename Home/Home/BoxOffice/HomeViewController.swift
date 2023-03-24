@@ -10,7 +10,6 @@ import Common
 import UIComponent
 import RxSwift
 import RxCocoa
-import SnapKit
 
 open class HomeViewController: UIViewController {
 
@@ -30,8 +29,11 @@ open class HomeViewController: UIViewController {
     
     // MARK: View
     
-    var headerView = UIView()
+    var titleStackView = UIStackView()
+    var titleLabel = UILabel()
     var dayRangeLabel = UILabel()
+    
+    var headerView = UIView()
     var dailyBoxOfficeButton = UIButton()
     var weeklyBoxOfficeButton = UIButton()
     var indicatorView = UIView()
@@ -43,7 +45,7 @@ open class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         initAttribute()
-        initLayout()
+        initConstraint()
         bind()
     }
     
@@ -53,9 +55,10 @@ open class HomeViewController: UIViewController {
             .disposed(by: disposeBag)
         
         viewModel.boxOfficeRelay
-            .bind(to: boxOfficeTableView.rx.items(cellIdentifier: BoxOfficeCell.cellID,
-                                                  cellType: BoxOfficeCell.self)
-            ) { (index, item, cell) in
+            .bind(to: boxOfficeTableView.rx.items(
+                cellIdentifier: BoxOfficeCell.cellID,
+                cellType: BoxOfficeCell.self
+            )) { (index, item, cell) in
                 cell.bind(boxOffice: item)
             }.disposed(by: disposeBag)
         
@@ -83,7 +86,6 @@ open class HomeViewController: UIViewController {
                 (self?.viewModel.boxOfficeRelay.value[$0.row])!
             }
             .bind(onNext: { [weak self] item in
-                // 각 모듈마다 Container
                 let viewModel = MovieDetailViewModel(useCase: MovieUseCase())
                 viewModel.getMovieInfo(movieCode: item.movieCd)
                 let movieDetailView = MovieDetailViewController(viewModel: viewModel)
@@ -94,15 +96,40 @@ open class HomeViewController: UIViewController {
     private func initAttribute() {
         view.backgroundColor = .white
         
-        headerView.backgroundColor = .white
+        titleStackView = {
+            let stackView = UIStackView()
+            stackView.backgroundColor = .clear
+            stackView.axis = .vertical
+            stackView.alignment = .center
+            stackView.distribution = .equalSpacing
+            return stackView
+        }()
         
-        dayRangeLabel.textColor = .lightGray
+        titleLabel = {
+            let label = UILabel()
+            label.text = "박스오피스"
+            label.font = MyFont.SubTitle2
+            label.textColor = .systemBlue
+            label.textAlignment = .center
+            return label
+        }()
+        
+        dayRangeLabel = {
+            let label = UILabel()
+            label.font = MyFont.Caption3
+            label.textColor = .lightGray
+            label.textAlignment = .center
+            return label
+        }()
+        
+        headerView.backgroundColor = .clear
         
         dailyBoxOfficeButton = {
             let button = UIButton()
             button.setTitle("일별", for: .normal)
             button.setTitleColor(.black, for: .normal)
             button.setTitleColor(.systemBlue, for: .selected)
+            button.backgroundColor = .clear
             return button
         }()
 
@@ -111,25 +138,31 @@ open class HomeViewController: UIViewController {
             button.setTitle("주간", for: .normal)
             button.setTitleColor(.black, for: .normal)
             button.setTitleColor(.systemBlue, for: .selected)
+            button.backgroundColor = .clear
             return button
         }()
         
-        indicatorView.backgroundColor = .lightGray
+        indicatorView.backgroundColor = .systemGray3
         
         boxOfficeTableView.delegate = self
         
-        navigationItem.title = "박스오피스"
         navigationItem.backButtonTitle = ""
     }
     
-    private func initLayout() {
+    private func initConstraint() {
         let safeArea = view.safeAreaLayoutGuide
+        
+        [titleLabel, dayRangeLabel].forEach {
+            titleStackView.addArrangedSubview($0)
+        }
+        
+        navigationItem.titleView = titleStackView
         
         [headerView, boxOfficeTableView].forEach {
             view.addSubview($0)
         }
         
-        [dayRangeLabel, dailyBoxOfficeButton, weeklyBoxOfficeButton, indicatorView].forEach {
+        [dailyBoxOfficeButton, weeklyBoxOfficeButton, indicatorView].forEach {
             headerView.addSubview($0)
         }
         
@@ -138,14 +171,9 @@ open class HomeViewController: UIViewController {
             $0.bottom.equalTo(dailyBoxOfficeButton.snp.bottom)
         }
         
-        dayRangeLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(8)
-            $0.centerX.equalToSuperview()
-        }
-        
         dailyBoxOfficeButton.snp.makeConstraints {
             $0.leading.equalToSuperview()
-            $0.top.equalTo(dayRangeLabel.snp.bottom).offset(4)
+            $0.top.equalTo(headerView).offset(4)
             $0.width.equalToSuperview().dividedBy(2)
             $0.height.equalTo(40)
         }
@@ -171,6 +199,4 @@ open class HomeViewController: UIViewController {
 }
 
 
-extension HomeViewController: UITableViewDelegate {
-    
-}
+extension HomeViewController: UITableViewDelegate { }

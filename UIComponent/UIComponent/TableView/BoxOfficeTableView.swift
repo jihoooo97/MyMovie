@@ -17,7 +17,7 @@ open class BoxOfficeTableView: UITableView {
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
         register(BoxOfficeCell.self, forCellReuseIdentifier: BoxOfficeCell.cellID)
-        rowHeight = 60
+        rowHeight = 50
     }
     
     public required init?(coder: NSCoder) {

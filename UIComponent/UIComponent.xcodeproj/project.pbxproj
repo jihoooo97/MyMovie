@@ -18,6 +18,9 @@
 		13D9947729B5C40700B8E497 /* BoxOfficeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9947629B5C40700B8E497 /* BoxOfficeCell.swift */; };
 		13D9948129B5DB2600B8E497 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13D9948029B5DB2600B8E497 /* Common.framework */; };
 		13D9948229B5DB2600B8E497 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 13D9948029B5DB2600B8E497 /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		13D9C23029CC7DD100984556 /* BadgeListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9C22F29CC7DD100984556 /* BadgeListCollectionView.swift */; };
+		13D9C23229CC809900984556 /* BadgeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9C23129CC809900984556 /* BadgeListCell.swift */; };
+		13D9C23729CD867100984556 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9C23629CD867100984556 /* TabbarController.swift */; };
 		E701F3BE7DB15143FCDEC850 /* Pods_UIComponent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719A3473C5FF5276C3D2C0ED /* Pods_UIComponent.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +60,9 @@
 		13D9947429B5C3E400B8E497 /* BoxOfficeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeTableView.swift; sourceTree = "<group>"; };
 		13D9947629B5C40700B8E497 /* BoxOfficeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeCell.swift; sourceTree = "<group>"; };
 		13D9948029B5DB2600B8E497 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13D9C22F29CC7DD100984556 /* BadgeListCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeListCollectionView.swift; sourceTree = "<group>"; };
+		13D9C23129CC809900984556 /* BadgeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeListCell.swift; sourceTree = "<group>"; };
+		13D9C23629CD867100984556 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		719A3473C5FF5276C3D2C0ED /* Pods_UIComponent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIComponent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBF96A5B0AD71973F240810F /* Pods-UIComponent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponent.debug.xcconfig"; path = "Target Support Files/Pods-UIComponent/Pods-UIComponent.debug.xcconfig"; sourceTree = "<group>"; };
 		DEABE1EA13C55F82271B53B3 /* Pods-UIComponent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponent.release.xcconfig"; path = "Target Support Files/Pods-UIComponent/Pods-UIComponent.release.xcconfig"; sourceTree = "<group>"; };
@@ -88,6 +94,7 @@
 			children = (
 				1353253E29BCE34200D540F8 /* BackButtonHeaderView.swift */,
 				134BEA7829BDE332003B6D27 /* NavigationController.swift */,
+				13D9C23629CD867100984556 /* TabbarController.swift */,
 				13275D3829C6B1750052F5A0 /* BorderLabel.swift */,
 			);
 			path = View;
@@ -118,6 +125,7 @@
 			children = (
 				1353253D29BCE31C00D540F8 /* View */,
 				13D9946F29B5C07000B8E497 /* TableView */,
+				13D9C22E29CC7D4E00984556 /* CollectionView */,
 				13D9945A29B5C04600B8E497 /* UIComponent.h */,
 			);
 			path = UIComponent;
@@ -148,6 +156,15 @@
 				719A3473C5FF5276C3D2C0ED /* Pods_UIComponent.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		13D9C22E29CC7D4E00984556 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				13D9C22F29CC7DD100984556 /* BadgeListCollectionView.swift */,
+				13D9C23129CC809900984556 /* BadgeListCell.swift */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 		7F9F6835AD361151D986711D /* Pods */ = {
@@ -301,7 +318,10 @@
 				1318ED9F29BA3C16009A674D /* BaseTableViewCell.swift in Sources */,
 				134BEA7929BDE332003B6D27 /* NavigationController.swift in Sources */,
 				13D9947729B5C40700B8E497 /* BoxOfficeCell.swift in Sources */,
+				13D9C23029CC7DD100984556 /* BadgeListCollectionView.swift in Sources */,
+				13D9C23229CC809900984556 /* BadgeListCell.swift in Sources */,
 				13275D3929C6B1750052F5A0 /* BorderLabel.swift in Sources */,
+				13D9C23729CD867100984556 /* TabbarController.swift in Sources */,
 				1353253F29BCE34200D540F8 /* BackButtonHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
