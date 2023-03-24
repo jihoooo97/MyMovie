@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import Home
-import Common
 import UIComponent
 import Swinject
 
@@ -24,13 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         
-        let tabbarController = UITabBarController()
-        let homeViewController = NavigationController(rootViewController: homeDIContainer.resolve(HomeViewController.self)!)
-        homeViewController.tabBarItem.badgeColor = .systemBlue
-        homeViewController.tabBarItem.image = UIImage(systemName: "house")
-        homeViewController.title = "홈"
-        
-        tabbarController.viewControllers = [homeViewController]
+        let tabbarController = homeDIContainer.resolve(TabbarController.self)
         
         window?.rootViewController = tabbarController
         window?.makeKeyAndVisible()
