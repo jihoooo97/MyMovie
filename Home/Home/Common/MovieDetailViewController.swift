@@ -77,12 +77,12 @@ open class MovieDetailViewController: UIViewController {
             .bind(onNext: { [weak self] movie in
                 self?.navigationItem.title = movie.movieNm
                 self?.genreLabel.text = movie.genres.compactMap { $0.genreNm }.joined(separator: "/")
-                self?.nationLabel.text = movie.nations.first?.nationNm ?? "-"
+                self?.nationLabel.text = movie.nations.first?.nationNm ?? "정보 없음"
                 self?.showTimeLabel.text = movie.showTm + "분"
                 self?.openDateLabel.text = movie.openDt
-                self?.watchGradeLabel.text = movie.audits.first?.watchGradeNm ?? "-"
-                self?.directorLabel.text = movie.directors.first?.peopleNm ?? "-"
-                self?.companyLabel.text = movie.companys.first?.companyNm ?? "-"
+                self?.watchGradeLabel.text = movie.audits.first?.watchGradeNm ?? "정보 없음"
+                self?.directorLabel.text = movie.directors.first?.peopleNm ?? "정보 없음"
+                self?.companyLabel.text = movie.companys.first?.companyNm ?? "정보 없음"
             }).disposed(by: disposeBag)
         
         viewModel.actorListRelay
@@ -273,7 +273,7 @@ open class MovieDetailViewController: UIViewController {
         
         actorTitleLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(Constraint.defaultLeftRight)
-            $0.top.equalTo(watchGradeLabel.snp.bottom).offset(Constraint.titleLabelTop)
+            $0.top.equalTo(watchGradeTitltLabel.snp.bottom).offset(Constraint.titleLabelTop)
         }
         
         actorCollectionView.snp.makeConstraints {
