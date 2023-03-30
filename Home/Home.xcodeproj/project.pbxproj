@@ -115,6 +115,7 @@
 		13D9940129B3877B00B8E497 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				13F9DD3B29D5CFDC00B0F1DB /* Common */,
 				13D9C23329CD82E000984556 /* BoxOffice */,
 				13D9C23429CD82F200984556 /* Search */,
 				13D9C23529CD82FA00984556 /* Mypage */,
@@ -137,8 +138,6 @@
 			children = (
 				13D9941E29B38B4A00B8E497 /* HomeViewController.swift */,
 				13D9942229B3903900B8E497 /* HomeViewModel.swift */,
-				1353253B29BCDFA700D540F8 /* MovieDetailViewController.swift */,
-				1353254029BCE6EC00D540F8 /* MovieDetailViewModel.swift */,
 			);
 			path = BoxOffice;
 			sourceTree = "<group>";
@@ -158,6 +157,15 @@
 				13D9C2DA29CF626E00984556 /* MypageViewController.swift */,
 			);
 			path = Mypage;
+			sourceTree = "<group>";
+		};
+		13F9DD3B29D5CFDC00B0F1DB /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				1353253B29BCDFA700D540F8 /* MovieDetailViewController.swift */,
+				1353254029BCE6EC00D540F8 /* MovieDetailViewModel.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		1B66B39E0B0439BA09558B84 /* Pods */ = {

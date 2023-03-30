@@ -12,7 +12,7 @@ import Moya
 public protocol MovieUseCaseProtocol {
     func getDailyBoxOffice(targetDt: String) -> Single<DailyBoxOfficeResult>
     func getWeeklyBoxOffice(targetDt: String) -> Single<WeeklyBoxOfficeResult>
-    func searchMovieList(movieNm: String) -> Single<SearchMovieListResult>
+    func searchMovieList(movieNm: String, currentPage: Int) -> Single<SearchMovieListResult>
     func getMovieInfo(movieCd: String) -> Single<MovieInfoResult>
 }
 
@@ -33,8 +33,10 @@ open class MovieUseCase: MovieUseCaseProtocol {
         return provider.requestObject(.weeklyBoxOffice(targetDt: targetDt), type: WeeklyBoxOfficeResult.self)
     }
 
-    public func searchMovieList(movieNm: String) -> Single<SearchMovieListResult> {
-        return provider.requestObject(.searchMovieList(movieNm: movieNm), type: SearchMovieListResult.self)
+    public func searchMovieList(movieNm: String, currentPage: Int) -> Single<SearchMovieListResult> {
+        return provider.requestObject(.searchMovieList(
+            movieNm: movieNm, currentPage: currentPage
+        ), type: SearchMovieListResult.self)
     }
     
     public func getMovieInfo(movieCd: String) -> Single<MovieInfoResult> {

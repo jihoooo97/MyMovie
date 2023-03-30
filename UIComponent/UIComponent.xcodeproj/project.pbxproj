@@ -26,6 +26,9 @@
 		13D9C2E129D083C100984556 /* OneLabelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9C2E029D083C100984556 /* OneLabelCollectionViewCell.swift */; };
 		13D9C2E329D0844A00984556 /* OneLabelCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9C2E229D0844A00984556 /* OneLabelCollectionView.swift */; };
 		13D9C2E529D0855500984556 /* MypageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9C2E429D0855500984556 /* MypageHeaderView.swift */; };
+		13F9DD3829D5CA2600B0F1DB /* SearchMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F9DD3729D5CA2600B0F1DB /* SearchMovieCell.swift */; };
+		13F9DD3A29D5CA4100B0F1DB /* SearchMovieTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F9DD3929D5CA4100B0F1DB /* SearchMovieTableView.swift */; };
+		13F9DD3D29D5F37C00B0F1DB /* TableViewLoadingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F9DD3C29D5F37C00B0F1DB /* TableViewLoadingFooterView.swift */; };
 		E701F3BE7DB15143FCDEC850 /* Pods_UIComponent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719A3473C5FF5276C3D2C0ED /* Pods_UIComponent.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +76,9 @@
 		13D9C2E029D083C100984556 /* OneLabelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLabelCollectionViewCell.swift; sourceTree = "<group>"; };
 		13D9C2E229D0844A00984556 /* OneLabelCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLabelCollectionView.swift; sourceTree = "<group>"; };
 		13D9C2E429D0855500984556 /* MypageHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageHeaderView.swift; sourceTree = "<group>"; };
+		13F9DD3729D5CA2600B0F1DB /* SearchMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieCell.swift; sourceTree = "<group>"; };
+		13F9DD3929D5CA4100B0F1DB /* SearchMovieTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieTableView.swift; sourceTree = "<group>"; };
+		13F9DD3C29D5F37C00B0F1DB /* TableViewLoadingFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewLoadingFooterView.swift; sourceTree = "<group>"; };
 		719A3473C5FF5276C3D2C0ED /* Pods_UIComponent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIComponent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBF96A5B0AD71973F240810F /* Pods-UIComponent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponent.debug.xcconfig"; path = "Target Support Files/Pods-UIComponent/Pods-UIComponent.debug.xcconfig"; sourceTree = "<group>"; };
 		DEABE1EA13C55F82271B53B3 /* Pods-UIComponent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponent.release.xcconfig"; path = "Target Support Files/Pods-UIComponent/Pods-UIComponent.release.xcconfig"; sourceTree = "<group>"; };
@@ -155,6 +161,9 @@
 				1318ED9E29BA3C16009A674D /* BaseTableViewCell.swift */,
 				13D9947429B5C3E400B8E497 /* OneLabelTableView.swift */,
 				13D9947629B5C40700B8E497 /* OneLabelCell.swift */,
+				13F9DD3929D5CA4100B0F1DB /* SearchMovieTableView.swift */,
+				13F9DD3729D5CA2600B0F1DB /* SearchMovieCell.swift */,
+				13F9DD3C29D5F37C00B0F1DB /* TableViewLoadingFooterView.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -343,6 +352,9 @@
 				13D9C23729CD867100984556 /* TabbarController.swift in Sources */,
 				1353253F29BCE34200D540F8 /* BackButtonHeaderView.swift in Sources */,
 				13D9C2E329D0844A00984556 /* OneLabelCollectionView.swift in Sources */,
+				13F9DD3A29D5CA4100B0F1DB /* SearchMovieTableView.swift in Sources */,
+				13F9DD3D29D5F37C00B0F1DB /* TableViewLoadingFooterView.swift in Sources */,
+				13F9DD3829D5CA2600B0F1DB /* SearchMovieCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

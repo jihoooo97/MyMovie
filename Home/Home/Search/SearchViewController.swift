@@ -30,12 +30,13 @@ open class SearchViewController: UIViewController {
     private struct Constraint {
         static let defaultLeftRight = 8.0
         static let defaultTopBottom = 8.0
+        static let searchBarHeight = 56.0
     }
     
     
     // MARK: View
     var searchBar = UISearchBar()
-    var searchResultTableView = OneLabelTableView()
+    var searchResultTableView = SearchMovieTableView()
     
     private var disposeBag = DisposeBag()
     
@@ -52,18 +53,40 @@ open class SearchViewController: UIViewController {
         searchBar.rx.searchButtonClicked
             .withUnretained(self).map { $0.0 }
             .bind(onNext: { vc in
+                vc.searchResultTableView.setContentOffset(.zero, animated: false)
                 vc.viewModel.searchMovie(movieNm: vc.searchBar.text ?? "")
-                vc.searchBar.text = ""
                 vc.searchBar.resignFirstResponder()
             }).disposed(by: disposeBag)
         
         viewModel.movieListRelay
             .bind(to: searchResultTableView.rx.items(
-                cellIdentifier: OneLabelCell.cellID,
-                cellType: OneLabelCell.self
+                cellIdentifier: SearchMovieCell.cellID,
+                cellType: SearchMovieCell.self
             )) { index, data, cell in
                 cell.bind(movie: data)
             }.disposed(by: disposeBag)
+        
+        searchResultTableView.rx.didScroll
+            .throttle(.seconds(1), latest: false, scheduler: MainScheduler.instance)
+            .withUnretained(self).map { $0.0 }
+            .map { ($0, $0.searchResultTableView.contentOffset.y) }
+            .bind(onNext: { vc, offset in
+                let contentHeight = vc.searchResultTableView.contentSize.height
+                let pagenationY = vc.searchResultTableView.frame.height
+
+                if offset > contentHeight - pagenationY - 100  {
+                    vc.viewModel.fetchMovie()
+                }
+            }).disposed(by: disposeBag)
+        
+        searchResultTableView.rx.modelSelected(SearchMovieResponse.self)
+            .withUnretained(self).map {$0 }
+            .bind(onNext: { vc, movie in
+                let viewModel = MovieDetailViewModel(useCase: MovieUseCase())
+                viewModel.getMovieInfo(movieCode: movie.movieCd)
+                let movieDetailView = MovieDetailViewController(viewModel: viewModel)
+                vc.navigationController?.pushViewController(movieDetailView, animated: true)
+            }).disposed(by: disposeBag)
     }
     
     private func initAttribute() {
@@ -104,7 +127,7 @@ open class SearchViewController: UIViewController {
         
         searchResultTableView.snp.makeConstraints {
             $0.leading.trailing.bottom.equalTo(safeArea)
-            $0.top.equalTo(searchBar.snp.bottom).offset(16)
+            $0.top.equalTo(searchBar.snp.bottom).offset(Constraint.defaultTopBottom)
         }
     }
     

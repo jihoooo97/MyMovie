@@ -18,6 +18,7 @@ enum AppDIContainer {
         // MARK: Tabbar
         container.register(TabbarController.self) { r in
             let homeViewController = NavigationController(rootViewController: container.resolve(HomeViewController.self)!)
+            homeViewController.isNavigationBarHidden = false
             homeViewController.tabBarItem.image = UIImage(systemName: "house")
             homeViewController.title = "홈"
             
@@ -25,7 +26,7 @@ enum AppDIContainer {
             searchViewController.tabBarItem.image = UIImage(systemName: "magnifyingglass")
             searchViewController.title = "검색"
 
-            let myageViewController = NavigationController(rootViewController: UIViewController())
+            let myageViewController = NavigationController(rootViewController: MypageViewController())
             myageViewController.tabBarItem.image = UIImage(systemName: "person")
             myageViewController.title = "내 정보"
             

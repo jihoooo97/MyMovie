@@ -11,7 +11,7 @@ import Moya
 public enum MovieAPI {
     case dailyBoxOffice(targetDt: String)
     case weeklyBoxOffice(targetDt: String)
-    case searchMovieList(movieNm: String)
+    case searchMovieList(movieNm: String, currentPage: Int)
     case movieInfo(movieCd: String)
     case actorList(peopleNm: String)
     case actorInfo(peopleCd: String)
@@ -60,9 +60,11 @@ extension MovieAPI: TargetType {
                                                    "targetDt": targetDt,
                                                    "weekGb": "0"],
                                       encoding: URLEncoding.queryString)
-        case let .searchMovieList(movieNm):
+        case let .searchMovieList(movieNm, currentPage):
             return .requestParameters(parameters: ["key": MyKeys.movie,
-                                                   "movieNm": movieNm],
+                                                   "movieNm": movieNm,
+                                                   "curPage": "\(currentPage)",
+                                                   "itemPerPage": 20],
                                       encoding: URLEncoding.queryString)
         case let .movieInfo(movieCd):
             return .requestParameters(parameters: ["key": MyKeys.movie,
