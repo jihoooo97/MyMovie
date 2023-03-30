@@ -11,7 +11,7 @@ import Moya
 public enum MovieAPI {
     case dailyBoxOffice(targetDt: String)
     case weeklyBoxOffice(targetDt: String)
-    case searchMoviList(movieNm: String?, directorNm: String?, actorNm: String?)
+    case searchMovieList(movieNm: String)
     case movieInfo(movieCd: String)
     case actorList(peopleNm: String)
     case actorInfo(peopleCd: String)
@@ -30,7 +30,7 @@ extension MovieAPI: TargetType {
             return "/boxoffice/searchDailyBoxOfficeList.json"
         case .weeklyBoxOffice:
             return "/boxoffice/searchWeeklyBoxOfficeList.json"
-        case .searchMoviList:
+        case .searchMovieList:
             return "/movie/searchMovieList.json"
         case .movieInfo:
             return "/movie/searchMovieInfo.json"
@@ -43,7 +43,7 @@ extension MovieAPI: TargetType {
     
     public var method: Moya.Method {
         switch self {
-        case .dailyBoxOffice, .weeklyBoxOffice, .searchMoviList,
+        case .dailyBoxOffice, .weeklyBoxOffice, .searchMovieList,
                 .movieInfo, .actorList, .actorInfo:
             return .get
         }
@@ -60,11 +60,9 @@ extension MovieAPI: TargetType {
                                                    "targetDt": targetDt,
                                                    "weekGb": "0"],
                                       encoding: URLEncoding.queryString)
-        case let .searchMoviList(movieNm, directorNm, actorNm):
+        case let .searchMovieList(movieNm):
             return .requestParameters(parameters: ["key": MyKeys.movie,
-                                                   "movieNm": movieNm ?? "",
-                                                   "directorNm": directorNm ?? "",
-                                                   "actorNm": actorNm ?? ""],
+                                                   "movieNm": movieNm],
                                       encoding: URLEncoding.queryString)
         case let .movieInfo(movieCd):
             return .requestParameters(parameters: ["key": MyKeys.movie,

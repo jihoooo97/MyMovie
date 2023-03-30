@@ -21,6 +21,11 @@
 		13D9C23029CC7DD100984556 /* BadgeListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9C22F29CC7DD100984556 /* BadgeListCollectionView.swift */; };
 		13D9C23229CC809900984556 /* BadgeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9C23129CC809900984556 /* BadgeListCell.swift */; };
 		13D9C23729CD867100984556 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9C23629CD867100984556 /* TabbarController.swift */; };
+		13D9C2DD29CF635800984556 /* TabbarCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9C2DC29CF635800984556 /* TabbarCollectionView.swift */; };
+		13D9C2DF29CF63C200984556 /* TabbarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9C2DE29CF63C200984556 /* TabbarCell.swift */; };
+		13D9C2E129D083C100984556 /* OneLabelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9C2E029D083C100984556 /* OneLabelCollectionViewCell.swift */; };
+		13D9C2E329D0844A00984556 /* OneLabelCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9C2E229D0844A00984556 /* OneLabelCollectionView.swift */; };
+		13D9C2E529D0855500984556 /* MypageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9C2E429D0855500984556 /* MypageHeaderView.swift */; };
 		E701F3BE7DB15143FCDEC850 /* Pods_UIComponent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719A3473C5FF5276C3D2C0ED /* Pods_UIComponent.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +68,11 @@
 		13D9C22F29CC7DD100984556 /* BadgeListCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeListCollectionView.swift; sourceTree = "<group>"; };
 		13D9C23129CC809900984556 /* BadgeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeListCell.swift; sourceTree = "<group>"; };
 		13D9C23629CD867100984556 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
+		13D9C2DC29CF635800984556 /* TabbarCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarCollectionView.swift; sourceTree = "<group>"; };
+		13D9C2DE29CF63C200984556 /* TabbarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarCell.swift; sourceTree = "<group>"; };
+		13D9C2E029D083C100984556 /* OneLabelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLabelCollectionViewCell.swift; sourceTree = "<group>"; };
+		13D9C2E229D0844A00984556 /* OneLabelCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLabelCollectionView.swift; sourceTree = "<group>"; };
+		13D9C2E429D0855500984556 /* MypageHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageHeaderView.swift; sourceTree = "<group>"; };
 		719A3473C5FF5276C3D2C0ED /* Pods_UIComponent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIComponent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBF96A5B0AD71973F240810F /* Pods-UIComponent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponent.debug.xcconfig"; path = "Target Support Files/Pods-UIComponent/Pods-UIComponent.debug.xcconfig"; sourceTree = "<group>"; };
 		DEABE1EA13C55F82271B53B3 /* Pods-UIComponent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponent.release.xcconfig"; path = "Target Support Files/Pods-UIComponent/Pods-UIComponent.release.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +173,11 @@
 			children = (
 				13D9C22F29CC7DD100984556 /* BadgeListCollectionView.swift */,
 				13D9C23129CC809900984556 /* BadgeListCell.swift */,
+				13D9C2DC29CF635800984556 /* TabbarCollectionView.swift */,
+				13D9C2DE29CF63C200984556 /* TabbarCell.swift */,
+				13D9C2E229D0844A00984556 /* OneLabelCollectionView.swift */,
+				13D9C2E029D083C100984556 /* OneLabelCollectionViewCell.swift */,
+				13D9C2E429D0855500984556 /* MypageHeaderView.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -314,15 +329,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13D9C2DD29CF635800984556 /* TabbarCollectionView.swift in Sources */,
 				13D9947529B5C3E400B8E497 /* OneLabelTableView.swift in Sources */,
 				1318ED9F29BA3C16009A674D /* BaseTableViewCell.swift in Sources */,
 				134BEA7929BDE332003B6D27 /* NavigationController.swift in Sources */,
+				13D9C2E129D083C100984556 /* OneLabelCollectionViewCell.swift in Sources */,
 				13D9947729B5C40700B8E497 /* OneLabelCell.swift in Sources */,
+				13D9C2E529D0855500984556 /* MypageHeaderView.swift in Sources */,
 				13D9C23029CC7DD100984556 /* BadgeListCollectionView.swift in Sources */,
 				13D9C23229CC809900984556 /* BadgeListCell.swift in Sources */,
+				13D9C2DF29CF63C200984556 /* TabbarCell.swift in Sources */,
 				13275D3929C6B1750052F5A0 /* BorderLabel.swift in Sources */,
 				13D9C23729CD867100984556 /* TabbarController.swift in Sources */,
 				1353253F29BCE34200D540F8 /* BackButtonHeaderView.swift in Sources */,
+				13D9C2E329D0844A00984556 /* OneLabelCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

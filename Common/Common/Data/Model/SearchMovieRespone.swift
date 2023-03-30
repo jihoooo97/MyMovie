@@ -24,7 +24,7 @@ public struct SearchMovieResponse: Codable {
     public var openDt: String
     public var prdtStatNm: String
     public var typeNm: String
-    public var repNationNm: Nation
-    public var repGenreNm: Genre
+    public var repNationNm: String
+    public var repGenreNm: String
     public var directors: [Director]
 }

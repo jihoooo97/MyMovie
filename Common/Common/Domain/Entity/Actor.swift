@@ -9,7 +9,7 @@ import Foundation
 
 public protocol People: Codable {
     var peopleNm: String { get }
-    var peopleNmEn: String { get }
+//    var peopleNmEn: String { get }
 }
 
 public struct Actor: People {
@@ -21,7 +21,7 @@ public struct Actor: People {
 
 public struct Director: People {
     public var peopleNm: String
-    public var peopleNmEn: String
+//    public var peopleNmEn: String
 }
 
 public struct Staff: People {

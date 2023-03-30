@@ -50,9 +50,20 @@ open class SearchViewController: UIViewController {
 
     private func bind() {
         searchBar.rx.searchButtonClicked
-            .bind(onNext: { [weak self] in
-                print(self?.searchBar.text ?? "none")
+            .withUnretained(self).map { $0.0 }
+            .bind(onNext: { vc in
+                vc.viewModel.searchMovie(movieNm: vc.searchBar.text ?? "")
+                vc.searchBar.text = ""
+                vc.searchBar.resignFirstResponder()
             }).disposed(by: disposeBag)
+        
+        viewModel.movieListRelay
+            .bind(to: searchResultTableView.rx.items(
+                cellIdentifier: OneLabelCell.cellID,
+                cellType: OneLabelCell.self
+            )) { index, data, cell in
+                cell.bind(movie: data)
+            }.disposed(by: disposeBag)
     }
     
     private func initAttribute() {
@@ -69,7 +80,7 @@ open class SearchViewController: UIViewController {
             searchBar.searchTextField.layer.cornerRadius = 12
             searchBar.searchTextField.backgroundColor = .white
             searchBar.searchTextField.leftView?.tintColor = .systemBlue
-            searchBar.placeholder = "영화명, 배우명, 감독명"
+            searchBar.placeholder = "영화명"
             searchBar.searchTextField.textColor = .black
             searchBar.delegate = self
             return searchBar
@@ -105,12 +116,6 @@ extension SearchViewController: UISearchBarDelegate {
     
     public func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
         return true
-    }
-    
-    public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        print(searchBar.text ?? "none")
-        searchBar.text = ""
     }
     
 }

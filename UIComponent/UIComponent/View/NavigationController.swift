@@ -12,6 +12,7 @@ open class NavigationController: UINavigationController {
     public override func viewDidLoad() {
         super.viewDidLoad()
 
+        isNavigationBarHidden = true
         navigationBar.barTintColor = .white
         navigationBar.tintColor = .systemBlue
         navigationBar.titleTextAttributes = [.foregroundColor: UIColor.systemBlue]

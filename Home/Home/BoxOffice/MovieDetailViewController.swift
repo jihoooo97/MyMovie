@@ -311,11 +311,7 @@ extension MovieDetailViewController: UICollectionViewDelegate { }
 extension MovieDetailViewController: UICollectionViewDelegateFlowLayout {
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var name = ""
-        
-        if collectionView == actorCollectionView {
-            name = viewModel.actorListRelay.value[indexPath.row].peopleNm
-        }
+        let name =  viewModel.actorListRelay.value[indexPath.row].peopleNm
         
         let word = name.filter { $0 != " " }
         let space = name.filter { $0 == " " }

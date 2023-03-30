@@ -50,6 +50,10 @@ open class OneLabelCell: BaseTableViewCell {
         movieNameLabel.text = boxOffice.movieNm
     }
     
+    public func bind(movie: SearchMovieResponse) {
+        movieNameLabel.text = movie.movieNm
+    }
+    
     fileprivate func initAttribute() {
         backgroundColor = .white
         selectionStyle = .none
