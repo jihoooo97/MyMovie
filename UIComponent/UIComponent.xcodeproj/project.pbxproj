@@ -11,6 +11,7 @@
 		13275D3929C6B1750052F5A0 /* BorderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13275D3829C6B1750052F5A0 /* BorderLabel.swift */; };
 		134BEA7929BDE332003B6D27 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134BEA7829BDE332003B6D27 /* NavigationController.swift */; };
 		1353253F29BCE34200D540F8 /* BackButtonHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1353253E29BCE34200D540F8 /* BackButtonHeaderView.swift */; };
+		136B640C29D746A2003D9B98 /* MypageFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136B640B29D746A2003D9B98 /* MypageFooterView.swift */; };
 		13D9946029B5C04600B8E497 /* UIComponent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13D9945729B5C04600B8E497 /* UIComponent.framework */; };
 		13D9946529B5C04600B8E497 /* UIComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D9946429B5C04600B8E497 /* UIComponentTests.swift */; };
 		13D9946629B5C04600B8E497 /* UIComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 13D9945A29B5C04600B8E497 /* UIComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -29,6 +30,7 @@
 		13F9DD3829D5CA2600B0F1DB /* SearchMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F9DD3729D5CA2600B0F1DB /* SearchMovieCell.swift */; };
 		13F9DD3A29D5CA4100B0F1DB /* SearchMovieTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F9DD3929D5CA4100B0F1DB /* SearchMovieTableView.swift */; };
 		13F9DD3D29D5F37C00B0F1DB /* TableViewLoadingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F9DD3C29D5F37C00B0F1DB /* TableViewLoadingFooterView.swift */; };
+		13F9DD3F29D5FFFD00B0F1DB /* StickyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F9DD3E29D5FFFD00B0F1DB /* StickyView.swift */; };
 		E701F3BE7DB15143FCDEC850 /* Pods_UIComponent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719A3473C5FF5276C3D2C0ED /* Pods_UIComponent.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +63,7 @@
 		13275D3829C6B1750052F5A0 /* BorderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderLabel.swift; sourceTree = "<group>"; };
 		134BEA7829BDE332003B6D27 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		1353253E29BCE34200D540F8 /* BackButtonHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonHeaderView.swift; sourceTree = "<group>"; };
+		136B640B29D746A2003D9B98 /* MypageFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageFooterView.swift; sourceTree = "<group>"; };
 		13D9945729B5C04600B8E497 /* UIComponent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIComponent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13D9945A29B5C04600B8E497 /* UIComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIComponent.h; sourceTree = "<group>"; };
 		13D9945F29B5C04600B8E497 /* UIComponentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIComponentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +82,7 @@
 		13F9DD3729D5CA2600B0F1DB /* SearchMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieCell.swift; sourceTree = "<group>"; };
 		13F9DD3929D5CA4100B0F1DB /* SearchMovieTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieTableView.swift; sourceTree = "<group>"; };
 		13F9DD3C29D5F37C00B0F1DB /* TableViewLoadingFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewLoadingFooterView.swift; sourceTree = "<group>"; };
+		13F9DD3E29D5FFFD00B0F1DB /* StickyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyView.swift; sourceTree = "<group>"; };
 		719A3473C5FF5276C3D2C0ED /* Pods_UIComponent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIComponent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBF96A5B0AD71973F240810F /* Pods-UIComponent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponent.debug.xcconfig"; path = "Target Support Files/Pods-UIComponent/Pods-UIComponent.debug.xcconfig"; sourceTree = "<group>"; };
 		DEABE1EA13C55F82271B53B3 /* Pods-UIComponent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponent.release.xcconfig"; path = "Target Support Files/Pods-UIComponent/Pods-UIComponent.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 				134BEA7829BDE332003B6D27 /* NavigationController.swift */,
 				13D9C23629CD867100984556 /* TabbarController.swift */,
 				13275D3829C6B1750052F5A0 /* BorderLabel.swift */,
+				13F9DD3E29D5FFFD00B0F1DB /* StickyView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 				13D9C2E229D0844A00984556 /* OneLabelCollectionView.swift */,
 				13D9C2E029D083C100984556 /* OneLabelCollectionViewCell.swift */,
 				13D9C2E429D0855500984556 /* MypageHeaderView.swift */,
+				136B640B29D746A2003D9B98 /* MypageFooterView.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -343,6 +349,7 @@
 				1318ED9F29BA3C16009A674D /* BaseTableViewCell.swift in Sources */,
 				134BEA7929BDE332003B6D27 /* NavigationController.swift in Sources */,
 				13D9C2E129D083C100984556 /* OneLabelCollectionViewCell.swift in Sources */,
+				13F9DD3F29D5FFFD00B0F1DB /* StickyView.swift in Sources */,
 				13D9947729B5C40700B8E497 /* OneLabelCell.swift in Sources */,
 				13D9C2E529D0855500984556 /* MypageHeaderView.swift in Sources */,
 				13D9C23029CC7DD100984556 /* BadgeListCollectionView.swift in Sources */,
@@ -352,6 +359,7 @@
 				13D9C23729CD867100984556 /* TabbarController.swift in Sources */,
 				1353253F29BCE34200D540F8 /* BackButtonHeaderView.swift in Sources */,
 				13D9C2E329D0844A00984556 /* OneLabelCollectionView.swift in Sources */,
+				136B640C29D746A2003D9B98 /* MypageFooterView.swift in Sources */,
 				13F9DD3A29D5CA4100B0F1DB /* SearchMovieTableView.swift in Sources */,
 				13F9DD3D29D5F37C00B0F1DB /* TableViewLoadingFooterView.swift in Sources */,
 				13F9DD3829D5CA2600B0F1DB /* SearchMovieCell.swift in Sources */,

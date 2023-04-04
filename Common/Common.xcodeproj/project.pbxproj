@@ -11,6 +11,7 @@
 		134BEA7529BDA5D8003B6D27 /* LoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134BEA7429BDA5D8003B6D27 /* LoggingPlugin.swift */; };
 		134BEA7E29BDEFFB003B6D27 /* BoxOfficeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134BEA7D29BDEFFB003B6D27 /* BoxOfficeList.swift */; };
 		1353254329BCEFFD00D540F8 /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1353254229BCEFFD00D540F8 /* UIViewController+extension.swift */; };
+		136B640229D71DA9003D9B98 /* BookMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136B640129D71DA9003D9B98 /* BookMark.swift */; };
 		13D993E629B3830500B8E497 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13D993DD29B3830400B8E497 /* Common.framework */; };
 		13D993EB29B3830500B8E497 /* CommonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D993EA29B3830500B8E497 /* CommonTests.swift */; };
 		13D993EC29B3830500B8E497 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = 13D993E029B3830400B8E497 /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -46,6 +47,7 @@
 		134BEA7429BDA5D8003B6D27 /* LoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingPlugin.swift; sourceTree = "<group>"; };
 		134BEA7D29BDEFFB003B6D27 /* BoxOfficeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeList.swift; sourceTree = "<group>"; };
 		1353254229BCEFFD00D540F8 /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
+		136B640129D71DA9003D9B98 /* BookMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMark.swift; sourceTree = "<group>"; };
 		13D993DD29B3830400B8E497 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13D993E029B3830400B8E497 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		13D993E529B3830500B8E497 /* CommonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +155,7 @@
 				13D9942D29B3ADF500B8E497 /* Movie.swift */,
 				13D9942F29B3ADFF00B8E497 /* Actor.swift */,
 				134BEA7D29BDEFFB003B6D27 /* BoxOfficeList.swift */,
+				136B640129D71DA9003D9B98 /* BookMark.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				1353254329BCEFFD00D540F8 /* UIViewController+extension.swift in Sources */,
 				13D9948529B5F5EB00B8E497 /* Data+extension.swift in Sources */,
 				13D9C23F29CDEB5500984556 /* MyColor.swift in Sources */,
+				136B640229D71DA9003D9B98 /* BookMark.swift in Sources */,
 				13D9947E29B5D48A00B8E497 /* DateParser.swift in Sources */,
 				13D9943F29B4D3C800B8E497 /* ActorUseCase.swift in Sources */,
 			);
