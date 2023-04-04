@@ -14,6 +14,8 @@ open class OneLabelCollectionViewCell: UICollectionViewCell {
     
     private var movieNameLabel = UILabel()
     
+    public var code: String = ""
+    
     public override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -28,6 +30,11 @@ open class OneLabelCollectionViewCell: UICollectionViewCell {
     
     public func bind(title: String) {
         movieNameLabel.text = title
+    }
+    
+    public func bind(bookMark: BookMark) {
+        movieNameLabel.text = bookMark.title
+        code = bookMark.code
     }
     
     private func initAttribute() {
