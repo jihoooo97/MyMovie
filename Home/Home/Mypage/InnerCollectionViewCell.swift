@@ -20,7 +20,7 @@ open class InnerCollectionViewCell: UICollectionViewCell {
     public static let cellID = "InnerCollectionViewCell"
     weak var delegate: InnerCollectionViewCellDelegate?
     
-    private var collectionView = OneLabelCollectionView()
+    public var collectionView = OneLabelCollectionView()
     
     public var bookMarkListRelay = BehaviorRelay<[BookMark]>(value: [])
     fileprivate var disposeBag = DisposeBag()
@@ -58,7 +58,7 @@ open class InnerCollectionViewCell: UICollectionViewCell {
     }
     
     private func initAttribute() {
-        collectionView.delegate = self
+//        collectionView.delegate = self
         collectionView.backgroundColor = .clear
         backgroundColor = .brown
     }
@@ -77,12 +77,12 @@ extension InnerCollectionViewCell: UICollectionViewDelegate { }
 
 extension InnerCollectionViewCell: UICollectionViewDelegateFlowLayout {
     
-    public func collectionView(
-        _ collectionView: UICollectionView,
-        layout collectionViewLayout: UICollectionViewLayout,
-        sizeForItemAt indexPath: IndexPath
-    ) -> CGSize {
-        return CGSize(width: self.frame.width, height: 50)
-    }
+//    public func collectionView(
+//        _ collectionView: UICollectionView,
+//        layout collectionViewLayout: UICollectionViewLayout,
+//        sizeForItemAt indexPath: IndexPath
+//    ) -> CGSize {
+//        return CGSize(width: self.frame.width, height: 50)
+//    }
     
 }

@@ -17,6 +17,7 @@ open class OneLabelTableView: UITableView {
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
         register(OneLabelCell.self, forCellReuseIdentifier: OneLabelCell.cellID)
+        register(TableViewLoadingFooterView.self, forHeaderFooterViewReuseIdentifier: TableViewLoadingFooterView.id)
         rowHeight = 56
     }
     
